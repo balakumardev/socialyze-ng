@@ -29,6 +29,10 @@ export const routes: Routes = [
         data: {
           title: 'View Tweets'
         }
+      },
+      {
+        path: 'charts',
+        loadChildren: './chartjs/chartjs.module#ChartJSModule'
       }
     ]
   },
