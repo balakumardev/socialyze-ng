@@ -4,12 +4,16 @@ import { BsDropdownModule } from 'ng2-bootstrap/dropdown';
 
 import { DashboardComponent } from './dashboard.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
+import {CommonModule} from "@angular/common";
+import {HttpModule} from "@angular/http";
 
 @NgModule({
   imports: [
+    CommonModule,
     DashboardRoutingModule,
     ChartsModule,
-    BsDropdownModule
+    BsDropdownModule,
+    HttpModule
   ],
   declarations: [ DashboardComponent ]
 })

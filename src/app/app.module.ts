@@ -20,6 +20,8 @@ import { AppRoutingModule } from './app.routing';
 import { FullLayoutComponent } from './layouts/full-layout.component';
 import { SimpleLayoutComponent } from './layouts/simple-layout.component';
 import { ViewTweetsComponent } from './view-tweets/view-tweets.component';
+import {DataService} from "./data.service";
+import {HttpModule} from "@angular/http";
 
 @NgModule({
   imports: [
@@ -28,7 +30,8 @@ import { ViewTweetsComponent } from './view-tweets/view-tweets.component';
     AppRoutingModule,
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
-    ChartsModule
+    ChartsModule,
+    HttpModule
   ],
   declarations: [
     AppComponent,
@@ -43,7 +46,9 @@ import { ViewTweetsComponent } from './view-tweets/view-tweets.component';
   providers: [{
     provide: LocationStrategy,
     useClass: HashLocationStrategy
-  }],
+  },
+    DataService
+  ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

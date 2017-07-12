@@ -220,25 +220,14 @@
 <div class="app-body">
   <div class="sidebar">
     <nav class="sidebar-nav">
-      <ul class="nav">
+      <ul class="nav" *ngIf="loaded">
         <li class="nav-title text-center">
           <span>Categories</span>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" [routerLink]="['/dashboard']"><i class="icon-fire"></i> Top Trends </a>
+       <li class="nav-item" *ngFor="let cat of categories">
+          <a class="nav-link" routerLinkActive="active" [routerLink]="['/dashboard']" [queryParams]=" {cat: cat['id']}"><i class="fa fa-arrow-circle-o-right"></i> {{cat['name']}}</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" [routerLink]="['/dashboard']" [queryParams]=" {cat: 'world-news'}"><i class="icon-globe"></i> World News</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" [routerLink]="['/dashboard']" [queryParams]=" {cat: 'sports'}"><i class="fa fa-soccer-ball-o"></i> Sports</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" [routerLink]="['/dashboard']" [queryParams]=" {cat: 'entertainment'}"><i class="fa fa-soccer-ball-o"></i> Entertainment</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" [routerLink]="['/charts']" ><i class="fa fa-pie-chart"></i> Charts</a>
-        </li>
+
       </ul>
     </nav>
   </div>

@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import {DataService} from "../data.service";
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './full-layout.component.html'
 })
 export class FullLayoutComponent implements OnInit {
-
-  constructor() { }
+  categories: Object[];
+  loaded: boolean = false;
+  constructor(private data: DataService) { }
 
   public disabled:boolean = false;
   public status:{isopen:boolean} = {isopen: false};
@@ -21,5 +23,15 @@ export class FullLayoutComponent implements OnInit {
     this.status.isopen = !this.status.isopen;
   }
 
-  ngOnInit(): void {}
+
+  ngOnInit(): void {
+    this.data.getCategories().subscribe(
+      (response) => {
+        console.log(response.text());
+        console.log(response.json());
+        this.categories = response.json();
+        this.loaded = true;
+      }
+    );
+  }
 }
