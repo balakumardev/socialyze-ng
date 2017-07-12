@@ -1,42 +1,41 @@
 <div class="animated fadeIn">
   <div class="cotainer-fluid">
-    <div class="row">
-
-      <div class="col-sm-8">
-        <div class="card card-inverse card-success">
-          <div class="card-block">
-            This is a <b>positive</b> tweet about this #Hashtag
-          </div>
-          <div class="card-footer">
-            <span class="pull-right">-- Bala Kumar</span>
-          </div>
-        </div>
-      </div><!--/.col-->
-
-
-      <div class="col-sm-8">
-        <div class="card card-inverse card-danger">
-          <div class="card-block">
-            This is a <b>negative</b> tweet about this #Hashtag
-          </div>
-          <div class="card-footer">
-            <span class="pull-right">-- Bala Kumar</span>
-          </div>
-        </div>
-      </div><!--/.col-->
-
-
-      <div class="col-sm-8">
+    <div class="col-sm-4 pull-right">
+      <div class="col-sm-12">
         <div class="card card-inverse card-warning">
           <div class="card-block">
-            This is a <b>neutral</b> tweet about this #Hashtag
+            Sample tweet by the user
           </div>
           <div class="card-footer">
             <span class="pull-right">-- Bala Kumar</span>
           </div>
         </div>
       </div><!--/.col-->
+      <div class="col-sm-12">
+        <div class="card card-inverse card-warning">
+          <div class="card-block">
+            Sample tweet by the user
+          </div>
+          <div class="card-footer">
+            <span class="pull-right">-- Bala Kumar</span>
+          </div>
+        </div>
+      </div><!--/.col-->
+    </div>
 
+    <div class="row" *ngIf="loaded">
+      <div class="col-sm-12" *ngFor="let tweet of tweets">
+        <div class="card card-inverse card-primary">
+          <div class="card-block">
+            <img [src]="tweet.tweet.tweetJSON.user.profile_image_url" class="img-avatar pull-right">
+            {{tweet.tweet.tweetJSON.text}}
+          </div>
+
+          <div class="card-footer">
+            <span><small>{{tweet.totalTweets}} more tweets from this user</small></span><span class="pull-right">-- {{tweet['tweet']['tweetJSON']['user']['name']}} </span>
+          </div>
+        </div>
+      </div><!--/.col-->
     </div>
   </div>
 </div>

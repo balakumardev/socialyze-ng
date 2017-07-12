@@ -6,6 +6,7 @@ import { DashboardComponent } from './dashboard.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import {CommonModule} from "@angular/common";
 import {HttpModule} from "@angular/http";
+import {LaddaModule} from "angular2-ladda";
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import {HttpModule} from "@angular/http";
     DashboardRoutingModule,
     ChartsModule,
     BsDropdownModule,
-    HttpModule
+    HttpModule,
+    LaddaModule
   ],
   declarations: [ DashboardComponent ]
 })
