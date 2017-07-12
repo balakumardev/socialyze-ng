@@ -9,10 +9,10 @@ export class DataService {
   constructor(private http: Http) {}
 
   getHashtags(id : number) {
-    return this.http.get('http://localhost:8080/hs/' + id);
+    return this.http.get('http://app.socialyze.in:8080/hs/' + id);
   }
 
   getCategories() {
-    return this.http.get('http://localhost:8080/hashtag/tweetcategories');
+    return this.http.get('http://app.socialyze.in:8080/hashtag/tweetcategories');
   }
 }
