@@ -1,18 +1,19 @@
 import {AfterContentInit, Component, Input, OnInit} from '@angular/core';
-
+import {ActivatedRoute} from "@angular/router";
 @Component({
   selector: 'app-tweet-retweet-chart',
   templateUrl: './tweet-retweet-chart.component.html',
   styleUrls: ['./tweet-retweet-chart.component.scss']
 })
 export class TweetRetweetChartComponent implements OnInit, AfterContentInit {
-  @Input() tweets;
-  @Input() retweets;
+  tweets : object;
+  retweets : object;
   loaded: boolean = false;
-  constructor() { }
+  constructor(private thisroute: ActivatedRoute) { }
 
   ngOnInit() {
-
+		this.tweets = this.thisroute.snapshot.queryParams['tweets'];
+		this.retweets = this.thisroute.snapshot.queryParams['retweets'];
   }
   // Pie
   public pieChartLabels: string[] = ['Tweets', 'Retweets'];
