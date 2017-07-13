@@ -9,6 +9,7 @@ import {HttpModule} from "@angular/http";
 import {LaddaModule} from "angular2-ladda";
 import {LoadingSpinnerComponent} from "../loading-spinner/loading-spinner.component";
 import {ViewTweetsComponent} from "../view-tweets/view-tweets.component";
+import { TweetRetweetChartComponent } from './tweet-retweet-chart/tweet-retweet-chart.component';
 
 @NgModule({
   imports: [
@@ -19,6 +20,6 @@ import {ViewTweetsComponent} from "../view-tweets/view-tweets.component";
     HttpModule,
     LaddaModule
   ],
-  declarations: [ DashboardComponent, LoadingSpinnerComponent, ViewTweetsComponent ]
+  declarations: [ DashboardComponent, LoadingSpinnerComponent, ViewTweetsComponent, TweetRetweetChartComponent ]
 })
 export class DashboardModule { }

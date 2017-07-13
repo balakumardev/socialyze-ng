@@ -1,4 +1,4 @@
-<div class="animated fadeIn" *ngIf="loaded">
+<div class="animated fadeIn" *ngIf="loaded; else spinner">
   <div class="row" *ngFor="let hashtag of hashtags">
     <div class="col-lg-12">
       <div class="card">
@@ -83,5 +83,6 @@
     </div>
   </div>
 </div>
-
-<app-loading-spinner *ngIf="!loaded">Loading...</app-loading-spinner>
+<ng-template #spinner>
+  <app-loading-spinner>Loading...</app-loading-spinner>
+</ng-template>

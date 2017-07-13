@@ -224,6 +224,9 @@
         <li class="nav-title text-center">
           <span>Categories</span>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true}" [routerLink]="['/dashboard']" ><i class="fa fa-home"></i> Dashboard </a>
+        </li>
        <li class="nav-item" *ngFor="let cat of categories">
           <a class="nav-link" routerLinkActive="active" [routerLink]="['/dashboard']" [queryParams]=" {cat: cat['id']}"><i class="fa fa-arrow-circle-o-right"></i> {{cat['name']}}</a>
         </li>
