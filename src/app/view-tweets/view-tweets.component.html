@@ -1,20 +1,35 @@
 <div class="animated fadeIn" *ngIf="loaded">
   <div class="cotainer-fluid">
 
-    <div class="row">
+    <div class="row" *ngIf="loaded">
       <div class="col-sm-10" *ngFor="let tweet of tweets">
-        <div class="card card-inverse card-primary">
+        <div class="card" style="box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);">
           <div class="card-block">
-            <img [src]="tweet.tweet.tweetJSON.user.profile_image_url" class="img-avatar pull-right">
-            {{tweet.tweet.tweetJSON.text}}
-          </div>
-
+		  <div class="row">
+		  <div class="col-sm-1">
+           <img [src]="tweet.tweet.tweetJSON.user.profile_image_url" class="img-avatar pull-center">
+		   </div>
+		   <div class="col-sm-8">
+		   <i class="fa fa-twitter" style="font-size:20px;color:skyblue;"></i><font style="size:20px;padding-left:1%;text-transform:uppercase;font-family:Tahoma; ">{{tweet['tweet']['tweetJSON']['user']['name']}}</font>
+		   
+		  <span style="content:\B7">&middot;</span> <font style="font-size:small;font-family:Tahoma;"> {{tweet.tweet.tweetJSON.user.followers_count}} followers </font><br>
+		 <a href="http://twitter.com/{{tweet.tweet.tweetJSON.user.screen_name}}" style="padding-top:2%"><i class="fa fa-share-alt" style="font-size:12px;color:skyblue;"></i><font style="font-family:Tahoma;margin:1%;">twitter.com</font></a>
+		   </div>
+			<div class="col-sm-2">
+				<font style="font-size:0.8em;font-family:Tahoma;"><i class="fa fa-table"></i> {{tweet.tweet.tweetJSON.created_at}} </font>
+				</div>
+		
+			        <font style="font-family:Tahoma;margin:1%;">    {{tweet.tweet.tweetJSON.text}} </font>
+			
+				</div>
+			</div>
           <div class="card-footer">
-            <span><small>{{tweet.totalTweets}} more tweets from this user</small></span><span class="pull-right">-- {{tweet['tweet']['tweetJSON']['user']['name']}} </span>
+            <span><font style="font-size:medium;font-family:Tahoma;">{{tweet.totalTweets-1}} more tweets from this user</font></span>
           </div>
         </div>
       </div><!--/.col-->
     </div>
   </div>
 </div>
+
 <app-loading-spinner *ngIf="!loaded">Loading...</app-loading-spinner>
