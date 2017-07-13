@@ -19,7 +19,6 @@ import { AppRoutingModule } from './app.routing';
 //Layouts
 import { FullLayoutComponent } from './layouts/full-layout.component';
 import { SimpleLayoutComponent } from './layouts/simple-layout.component';
-import { ViewTweetsComponent } from './view-tweets/view-tweets.component';
 import {DataService} from "./data.service";
 import {HttpModule} from "@angular/http";
 
@@ -40,8 +39,7 @@ import {HttpModule} from "@angular/http";
     NAV_DROPDOWN_DIRECTIVES,
     BreadcrumbsComponent,
     SIDEBAR_TOGGLE_DIRECTIVES,
-    AsideToggleDirective,
-    ViewTweetsComponent
+    AsideToggleDirective
   ],
   providers: [{
     provide: LocationStrategy,

@@ -1,15 +1,28 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
 
-import { DashboardComponent } from './dashboard.component';
+import {DashboardComponent} from './dashboard.component';
+import {ViewTweetsComponent} from "../view-tweets/view-tweets.component";
 
 const routes: Routes = [
   {
     path: '',
-    component: DashboardComponent,
-    data: {
-      title: 'Dashboard'
-    }
+    children: [
+      {
+        path: '',
+        component: DashboardComponent,
+        data: {
+          title: 'Dashboard'
+        }
+      },
+      {
+        path: 'view-tweets',
+        component: ViewTweetsComponent,
+        data: {
+          title: 'View Tweets'
+        }
+      }
+    ]
   }
 ];
 
@@ -17,4 +30,5 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class DashboardRoutingModule {}
+export class DashboardRoutingModule {
+}

@@ -4,7 +4,6 @@ import { Routes, RouterModule } from '@angular/router';
 //Layouts
 import { FullLayoutComponent } from './layouts/full-layout.component';
 import { SimpleLayoutComponent } from './layouts/simple-layout.component';
-import {ViewTweetsComponent} from "./view-tweets/view-tweets.component";
 
 export const routes: Routes = [
   {
@@ -22,13 +21,6 @@ export const routes: Routes = [
       {
         path: 'dashboard',
         loadChildren: './dashboard/dashboard.module#DashboardModule'
-      },
-      {
-        path: 'view-tweets',
-        component: ViewTweetsComponent,
-        data: {
-          title: 'View Tweets'
-        }
       },
       {
         path: 'charts',
