@@ -104,7 +104,8 @@
       </div>
     </li>-->
     <li class="nav-item dropdown hidden-md-down" dropdown placement="bottom right" (onToggle)="toggled($event)">
-      <a class="nav-link nav-pill" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" dropdownToggle>
+      <a class="nav-link nav-pill" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+         aria-expanded="false" dropdownToggle>
         <i class="icon-envelope-letter"></i><span class="badge badge-pill badge-info">7</span>
       </a>
       <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg" *dropdownMenu aria-labelledby="simple-dropdown">
@@ -123,8 +124,12 @@
               <small class="text-muted">John Doe</small>
               <small class="text-muted float-right mt-q">Just now</small>
             </div>
-            <div class="text-truncate font-weight-bold"><span class="fa fa-exclamation text-danger"></span> Important message</div>
-            <div class="small text-muted text-truncate">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt...</div>
+            <div class="text-truncate font-weight-bold"><span class="fa fa-exclamation text-danger"></span> Important
+              message
+            </div>
+            <div class="small text-muted text-truncate">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt...
+            </div>
           </div>
         </a>
         <a href="#" class="dropdown-item">
@@ -140,7 +145,9 @@
               <small class="text-muted float-right mt-q">5 minutes ago</small>
             </div>
             <div class="text-truncate font-weight-bold">Lorem ipsum dolor sit amet</div>
-            <div class="small text-muted text-truncate">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt...</div>
+            <div class="small text-muted text-truncate">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt...
+            </div>
           </div>
         </a>
         <a href="#" class="dropdown-item">
@@ -156,7 +163,9 @@
               <small class="text-muted float-right mt-q">1:52 PM</small>
             </div>
             <div class="text-truncate font-weight-bold">Lorem ipsum dolor sit amet</div>
-            <div class="small text-muted text-truncate">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt...</div>
+            <div class="small text-muted text-truncate">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt...
+            </div>
           </div>
         </a>
         <a href="#" class="dropdown-item">
@@ -172,7 +181,9 @@
               <small class="text-muted float-right mt-q">4:03 PM</small>
             </div>
             <div class="text-truncate font-weight-bold">Lorem ipsum dolor sit amet</div>
-            <div class="small text-muted text-truncate">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt...</div>
+            <div class="small text-muted text-truncate">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt...
+            </div>
           </div>
         </a>
 
@@ -183,7 +194,8 @@
     </li>
 
     <li class="nav-item dropdown" dropdown placement="bottom right">
-      <a class="nav-link nav-pill avatar" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" dropdownToggle>
+      <a class="nav-link nav-pill avatar" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+         aria-expanded="false" dropdownToggle>
         <img src="assets/img/avatars/6.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
         <span class="badge badge-pill badge-danger">9</span>
       </a>
@@ -193,10 +205,14 @@
           <strong>Account</strong>
         </div>
 
-        <a class="dropdown-item" href="#"><i class="fa fa-bell-o"></i> Updates<span class="badge badge-info">42</span></a>
-        <a class="dropdown-item" href="#"><i class="fa fa-envelope-o"></i> Messages<span class="badge badge-success">42</span></a>
-        <a class="dropdown-item" href="#"><i class="fa fa-tasks"></i> Tasks<span class="badge badge-danger">42</span></a>
-        <a class="dropdown-item" href="#"><i class="fa fa-comments"></i> Comment<span class="badge badge-warning">42</span></a>
+        <a class="dropdown-item" href="#"><i class="fa fa-bell-o"></i> Updates<span
+          class="badge badge-info">42</span></a>
+        <a class="dropdown-item" href="#"><i class="fa fa-envelope-o"></i> Messages<span
+          class="badge badge-success">42</span></a>
+        <a class="dropdown-item" href="#"><i class="fa fa-tasks"></i> Tasks<span
+          class="badge badge-danger">42</span></a>
+        <a class="dropdown-item" href="#"><i class="fa fa-comments"></i> Comment<span
+          class="badge badge-warning">42</span></a>
 
         <div class="dropdown-header text-center">
           <strong>Settings</strong>
@@ -222,13 +238,20 @@
     <nav class="sidebar-nav">
       <ul class="nav" *ngIf="loaded">
         <li class="nav-title text-center">
+          <span>Home</span>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true}"
+             [routerLink]="['/dashboard']"><i class="fa fa-home"></i> Dashboard </a>
+        </li>
+
+        <li class="nav-title text-center">
           <span>Categories</span>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true}" [routerLink]="['/dashboard']" ><i class="fa fa-home"></i> Dashboard </a>
-        </li>
-       <li class="nav-item" *ngFor="let cat of categories">
-          <a class="nav-link" routerLinkActive="active" [routerLink]="['/dashboard']" [queryParams]=" {cat: cat['id']}"><i class="fa fa-arrow-circle-o-right"></i> {{cat['name']}}</a>
+        <li class="nav-item" *ngFor="let cat of categories">
+          <a class="nav-link" routerLinkActive="active" [routerLink]="['/dashboard']" [queryParams]=" {cat: cat['id']}"><i
+            class="fa fa-arrow-circle-o-right"></i> {{cat['name']}}</a>
         </li>
 
       </ul>
@@ -263,7 +286,7 @@
           </div>
           <div>Meeting with <strong>Lucas</strong></div>
           <small class="text-muted mr-1"><i class="icon-calendar"></i>&nbsp; 1 - 3pm</small>
-          <small class="text-muted"><i class="icon-location-pin"></i>&nbsp; Palo Alto, CA </small>
+          <small class="text-muted"><i class="icon-location-pin"></i>&nbsp; Palo Alto, CA</small>
         </div>
         <hr class="mx-1 my-0">
         <div class="callout callout-info m-0 py-1">
@@ -272,7 +295,7 @@
           </div>
           <div>Skype with <strong>Megan</strong></div>
           <small class="text-muted mr-1"><i class="icon-calendar"></i>&nbsp; 4 - 5pm</small>
-          <small class="text-muted"><i class="icon-social-skype"></i>&nbsp; On-line </small>
+          <small class="text-muted"><i class="icon-social-skype"></i>&nbsp; On-line</small>
         </div>
         <hr class="transparent mx-1 my-0">
         <div class="callout m-0 py-h text-muted text-center bg-faded text-uppercase">
@@ -282,7 +305,7 @@
         <div class="callout callout-danger m-0 py-1">
           <div>New UI Project - <strong>deadline</strong></div>
           <small class="text-muted mr-1"><i class="icon-calendar"></i>&nbsp; 10 - 11pm</small>
-          <small class="text-muted"><i class="icon-home"></i>&nbsp; creativeLabs HQ </small>
+          <small class="text-muted"><i class="icon-home"></i>&nbsp; creativeLabs HQ</small>
           <div class="avatars-stack mt-h">
             <div class="avatar avatar-xs">
               <img src="assets/img/avatars/2.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
@@ -305,13 +328,13 @@
         <div class="callout callout-success m-0 py-1">
           <div><strong>#10 Startups.Garden</strong> Meetup</div>
           <small class="text-muted mr-1"><i class="icon-calendar"></i>&nbsp; 1 - 3pm</small>
-          <small class="text-muted"><i class="icon-location-pin"></i>&nbsp; Palo Alto, CA </small>
+          <small class="text-muted"><i class="icon-location-pin"></i>&nbsp; Palo Alto, CA</small>
         </div>
         <hr class="mx-1 my-0">
         <div class="callout callout-primary m-0 py-1">
           <div><strong>Team meeting</strong></div>
           <small class="text-muted mr-1"><i class="icon-calendar"></i>&nbsp; 4 - 6pm</small>
-          <small class="text-muted"><i class="icon-home"></i>&nbsp; creativeLabs HQ </small>
+          <small class="text-muted"><i class="icon-home"></i>&nbsp; creativeLabs HQ</small>
           <div class="avatars-stack mt-h">
             <div class="avatar avatar-xs">
               <img src="assets/img/avatars/2.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
@@ -353,7 +376,9 @@
               <small class="text-muted float-right mt-q">1:52 PM</small>
             </div>
             <div class="text-truncate font-weight-bold">Lorem ipsum dolor sit amet</div>
-            <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt...</small>
+            <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+              incididunt...
+            </small>
           </div>
           <hr>
           <div class="message">
@@ -368,7 +393,9 @@
               <small class="text-muted float-right mt-q">1:52 PM</small>
             </div>
             <div class="text-truncate font-weight-bold">Lorem ipsum dolor sit amet</div>
-            <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt...</small>
+            <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+              incididunt...
+            </small>
           </div>
           <hr>
           <div class="message">
@@ -383,7 +410,9 @@
               <small class="text-muted float-right mt-q">1:52 PM</small>
             </div>
             <div class="text-truncate font-weight-bold">Lorem ipsum dolor sit amet</div>
-            <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt...</small>
+            <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+              incididunt...
+            </small>
           </div>
           <hr>
           <div class="message">
@@ -398,7 +427,9 @@
               <small class="text-muted float-right mt-q">1:52 PM</small>
             </div>
             <div class="text-truncate font-weight-bold">Lorem ipsum dolor sit amet</div>
-            <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt...</small>
+            <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+              incididunt...
+            </small>
           </div>
           <hr>
           <div class="message">
@@ -413,7 +444,9 @@
               <small class="text-muted float-right mt-q">1:52 PM</small>
             </div>
             <div class="text-truncate font-weight-bold">Lorem ipsum dolor sit amet</div>
-            <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt...</small>
+            <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+              incididunt...
+            </small>
           </div>
         </div>
       </tab>
@@ -432,7 +465,9 @@
               </label>
             </div>
             <div>
-              <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
+              <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua.
+              </small>
             </div>
           </div>
 
@@ -446,7 +481,9 @@
               </label>
             </div>
             <div>
-              <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
+              <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua.
+              </small>
             </div>
           </div>
 
@@ -473,27 +510,39 @@
           </div>
 
           <hr>
-          <div class="text-uppercase mb-q mt-2"><small><b>CPU Usage</b></small></div>
+          <div class="text-uppercase mb-q mt-2">
+            <small><b>CPU Usage</b></small>
+          </div>
           <div class="progress progress-xs">
-            <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0"
+                 aria-valuemax="100"></div>
           </div>
           <small class="text-muted">348 Processes. 1/4 Cores.</small>
 
-          <div class="text-uppercase mb-q mt-h"><small><b>Memory Usage</b></small></div>
+          <div class="text-uppercase mb-q mt-h">
+            <small><b>Memory Usage</b></small>
+          </div>
           <div class="progress progress-xs">
-            <div class="progress-bar bg-warning" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="progress-bar bg-warning" role="progressbar" style="width: 70%" aria-valuenow="70"
+                 aria-valuemin="0" aria-valuemax="100"></div>
           </div>
           <small class="text-muted">11444GB/16384MB</small>
 
-          <div class="text-uppercase mb-q mt-h"><small><b>SSD 1 Usage</b></small></div>
+          <div class="text-uppercase mb-q mt-h">
+            <small><b>SSD 1 Usage</b></small>
+          </div>
           <div class="progress progress-xs">
-            <div class="progress-bar bg-danger" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="progress-bar bg-danger" role="progressbar" style="width: 95%" aria-valuenow="95"
+                 aria-valuemin="0" aria-valuemax="100"></div>
           </div>
           <small class="text-muted">243GB/256GB</small>
 
-          <div class="text-uppercase mb-q mt-h"><small><b>SSD 2 Usage</b></small></div>
+          <div class="text-uppercase mb-q mt-h">
+            <small><b>SSD 2 Usage</b></small>
+          </div>
           <div class="progress progress-xs">
-            <div class="progress-bar bg-success" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="progress-bar bg-success" role="progressbar" style="width: 10%" aria-valuenow="10"
+                 aria-valuemin="0" aria-valuemax="100"></div>
           </div>
           <small class="text-muted">25GB/256GB</small>
         </div>

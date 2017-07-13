@@ -9,6 +9,7 @@ import {DataService} from "../data.service";
 export class DashboardComponent implements OnInit {
   categories: any;
   hashtags: any;
+  nohashtags: boolean = false;
   loaded: boolean = false;
 
   constructor(private router: Router, private thisRoute: ActivatedRoute, private data: DataService) {
@@ -50,6 +51,10 @@ export class DashboardComponent implements OnInit {
               }
             }
           );
+        }
+
+        if(this.hashtags == null || this.hashtags.length == 0) {
+          this.nohashtags = true;
         }
       }
     );

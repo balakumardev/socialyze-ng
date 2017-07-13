@@ -1,22 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterContentInit, Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-tweet-retweet-chart',
   templateUrl: './tweet-retweet-chart.component.html',
   styleUrls: ['./tweet-retweet-chart.component.scss']
 })
-export class TweetRetweetChartComponent implements OnInit {
-
+export class TweetRetweetChartComponent implements OnInit, AfterContentInit {
+  @Input() tweets;
+  @Input() retweets;
+  loaded: boolean = false;
   constructor() { }
 
   ngOnInit() {
+
   }
   // Pie
   public pieChartLabels: string[] = ['Tweets', 'Retweets'];
-  public pieChartData: number[] = [300, 100];
+  public pieChartData: number[];
   public pieChartType: string = 'pie';
 
-
+  ngAfterContentInit() {
+    this.pieChartData = [+this.tweets, +this.retweets];
+    console.log(this.pieChartData);
+    this.loaded = true;
+  }
   // events
   public chartClicked(e: any): void {
     console.log(e);
