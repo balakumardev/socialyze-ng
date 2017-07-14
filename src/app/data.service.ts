@@ -9,18 +9,18 @@ export class DataService {
   constructor(private http: Http) {}
 
   getHashtags(id : number) {
-    return this.http.get('http://localhost:8080/hs/' + id);
+    return this.http.get('http://app.socialyze.in:8080/hs/' + id);
   }
 
   getCategories() {
-    return this.http.get('http://localhost:8080/hashtag/tweetcategories');
+    return this.http.get('http://app.socialyze.in:8080/hashtag/tweetcategories');
   }
 
   getTweets(hashtag: string, num: number) {
-    return this.http.get('http://localhost:8080/hs/'+ hashtag + '/' + num);
+    return this.http.get('http://app.socialyze.in:8080/hs/'+ hashtag + '/' + num);
   }
 
   getNumTweetsByUser(id: string, hashtag: string) {
-    return this.http.get('http://localhost:8080/hashtag/'+hashtag+'/'+id);
+    return this.http.get('http://app.socialyze.in:8080/hashtag/'+hashtag+'/'+id);
   }
 }
