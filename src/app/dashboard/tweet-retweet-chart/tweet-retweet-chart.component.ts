@@ -19,12 +19,29 @@ export class TweetRetweetChartComponent implements OnInit, AfterContentInit {
   public pieChartLabels: string[] = ['Tweets', 'Retweets'];
   public pieChartData: number[];
   public pieChartType: string = 'pie';
+	public barChartOptions: any = {
+    scaleShowVerticalLines: false,
+    responsive: true
+  };
+  public barChartLabels: string[] = ['Types of tweets'];
+  public barChartType: string = 'bar';
+  public barChartLegend: boolean = true;
 
+  public barChartData: any[];
+  public doughnutChartLabels: string[] = ['tweets','retweets'];
+  public doughnutChartData: number[];
+  public doughnutChartType: string = 'doughnut';
   ngAfterContentInit() {
     this.pieChartData = [+this.tweets, +this.retweets];
+	 this.doughnutChartData = [+this.tweets, +this.retweets];
+	this.barChartData = [
+    {data: [+this.tweets], label: 'tweets'},
+    {data: [+this.retweets], label: 'retweets'}
+  ];
     console.log(this.pieChartData);
     this.loaded = true;
   }
+  
   // events
   public chartClicked(e: any): void {
     console.log(e);
