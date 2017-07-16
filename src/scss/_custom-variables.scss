@@ -47,7 +47,7 @@ $navbar-border: (
     )
 );
 $navbar-brand-width:                250px;
-$navbar-brand-bg:                   $brand-primary;
+$navbar-brand-bg:                   #fff;
 $navbar-brand-logo:                 url('../img/logo.png');
 $navbar-brand-logo-size:            240px auto;
 $navbar-brand-border: (
@@ -55,7 +55,13 @@ $navbar-brand-border: (
         size:                       1px,
         style:                      solid,
         color:                      darken($brand-primary,10%)
+    ),
+	right: (
+        size:                       1px,
+        style:                      solid,
+        color:                      darken(#000,0.1%)
     )
+	
 );
 
 $navbar-color:                      $gray-light;

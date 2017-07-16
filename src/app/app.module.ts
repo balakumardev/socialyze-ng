@@ -22,6 +22,8 @@ import { SimpleLayoutComponent } from './layouts/simple-layout.component';
 import {DataService} from "./data.service";
 import {HttpModule} from "@angular/http";
 
+
+
 @NgModule({
   imports: [
     BrowserModule,
