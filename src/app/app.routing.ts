@@ -4,22 +4,20 @@ import { Routes, RouterModule } from '@angular/router';
 //Layouts
 import { FullLayoutComponent } from './layouts/full-layout.component';
 import { SimpleLayoutComponent } from './layouts/simple-layout.component';
+import {LoginComponent} from "./login/login.component";
 
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: 'login',
     pathMatch: 'full',
   },
   {
-    path: '',
+    path: 'dashboard',
     component: FullLayoutComponent,
-    data: {
-      title: 'Home'
-    },
     children: [
       {
-        path: 'dashboard',
+        path: '',
         loadChildren: './dashboard/dashboard.module#DashboardModule'
       },
       {
@@ -29,17 +27,11 @@ export const routes: Routes = [
     ]
   },
   {
-    path: 'pages',
-    component: SimpleLayoutComponent,
+    path: 'login',
     data: {
-      title: 'Pages'
+      title: 'Login'
     },
-    children: [
-      {
-        path: '',
-        loadChildren: './pages/pages.module#PagesModule',
-      }
-    ]
+    component: LoginComponent
   }
 ];
 
