@@ -21,6 +21,8 @@ import { FullLayoutComponent } from './layouts/full-layout.component';
 import { SimpleLayoutComponent } from './layouts/simple-layout.component';
 import {DataService} from "./data.service";
 import {HttpModule} from "@angular/http";
+import { LoginComponent } from './login/login.component';
+import {FormsModule} from "@angular/forms";
 
 
 
@@ -32,7 +34,8 @@ import {HttpModule} from "@angular/http";
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
     ChartsModule,
-    HttpModule
+    HttpModule,
+    FormsModule
   ],
   declarations: [
     AppComponent,
@@ -41,7 +44,8 @@ import {HttpModule} from "@angular/http";
     NAV_DROPDOWN_DIRECTIVES,
     BreadcrumbsComponent,
     SIDEBAR_TOGGLE_DIRECTIVES,
-    AsideToggleDirective
+    AsideToggleDirective,
+    LoginComponent
   ],
   providers: [{
     provide: LocationStrategy,
