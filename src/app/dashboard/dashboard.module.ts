@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule }   from '@angular/forms';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { BsDropdownModule } from 'ng2-bootstrap/dropdown';
 
@@ -12,6 +13,7 @@ import {ViewTweetsComponent} from "../view-tweets/view-tweets.component";
 import { TweetRetweetChartComponent } from './tweet-retweet-chart/tweet-retweet-chart.component';
 import { AdminHashtagsComponent } from '../admin-hashtags/admin-hashtags.component';
 import { HashtagDetailsComponent } from '../hashtag-details/hashtag-details.component';
+import { AddHashtagComponent } from '../add-hashtag/add-hashtag.component';
 
 @NgModule({
   imports: [
@@ -20,8 +22,9 @@ import { HashtagDetailsComponent } from '../hashtag-details/hashtag-details.comp
     ChartsModule,
     BsDropdownModule,
     HttpModule,
-    LaddaModule
+    LaddaModule,
+	FormsModule
   ],
-  declarations: [ DashboardComponent, LoadingSpinnerComponent, ViewTweetsComponent, TweetRetweetChartComponent,  AdminHashtagsComponent,HashtagDetailsComponent  ]
+  declarations: [ DashboardComponent, LoadingSpinnerComponent, ViewTweetsComponent, TweetRetweetChartComponent,  AdminHashtagsComponent,HashtagDetailsComponent,AddHashtagComponent  ]
 })
 export class DashboardModule { }

@@ -1,4 +1,5 @@
 <div class="container" *ngIf="loaded" style="padding:1%">
+	<a class="btn btn-primary pull-right" role="button" [routerLink]="['add-hashtag']"><font style="font-weight:bold;" >Add Hashtag</font></a>
 	<div class="col-sm-12" *ngFor="let category of categories">
 		<div class="fancy" style="text-align:center;font-family:Arial;font-weight:bold;font-size:20px;margin:5%;"><span>{{category.name}}</span></div>
 		<app-hashtag-details [id]="category.id"></app-hashtag-details>

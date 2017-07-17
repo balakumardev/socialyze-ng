@@ -1,0 +1,16 @@
+<div class = "container"> 
+   <h1>Add Hashtag</h1> 
+   <form #form="ngForm" (ngSubmit)="logForm(form)"> 
+      <div class = "form-group"> 
+         <label for = "hashtagid">ID</label> 
+         <input type = "text" class = "form-control" id = "productid" required 
+             name = "id" ngModel> 
+      </div> 
+      <div class = "form-group"> 
+         <label for = "name">Name</label> 
+         <input type = "text" class = "form-control" id = "name" 
+             name = "name" ngModel> 
+      </div> 
+	  <Button value="submit">Add</Button>
+   </form> 
+</div>
