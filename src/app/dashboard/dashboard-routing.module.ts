@@ -4,8 +4,6 @@ import {Routes, RouterModule} from '@angular/router';
 import {DashboardComponent} from './dashboard.component';
 import {ViewTweetsComponent} from "../view-tweets/view-tweets.component";
 import {TweetRetweetChartComponent} from "./tweet-retweet-chart/tweet-retweet-chart.component";
-import { AdminHashtagsComponent } from '../admin-hashtags/admin-hashtags.component';
-import { AddHashtagComponent } from '../add-hashtag/add-hashtag.component';
 const routes: Routes = [
   {
     path: '',
@@ -29,20 +27,6 @@ const routes: Routes = [
         component: TweetRetweetChartComponent,
         data: {
           title: 'Charts for Tweets & Retweets'
-        }
-      },
-	   {
-        path: 'Admin-UI',
-        component: AdminHashtagsComponent,
-        data: {
-          title: 'Current Hashtags'
-        }
-      },
-	  {
-        path: 'Admin-UI/add-hashtag',
-        component: AddHashtagComponent,
-        data: {
-          title: 'Add Hashtag'
         }
       }
     ]

@@ -11,9 +11,7 @@ import {LaddaModule} from "angular2-ladda";
 import {LoadingSpinnerComponent} from "../loading-spinner/loading-spinner.component";
 import {ViewTweetsComponent} from "../view-tweets/view-tweets.component";
 import { TweetRetweetChartComponent } from './tweet-retweet-chart/tweet-retweet-chart.component';
-import { AdminHashtagsComponent } from '../admin-hashtags/admin-hashtags.component';
-import { HashtagDetailsComponent } from '../hashtag-details/hashtag-details.component';
-import { AddHashtagComponent } from '../add-hashtag/add-hashtag.component';
+
 
 @NgModule({
   imports: [
@@ -25,6 +23,6 @@ import { AddHashtagComponent } from '../add-hashtag/add-hashtag.component';
     LaddaModule,
 	FormsModule
   ],
-  declarations: [ DashboardComponent, LoadingSpinnerComponent, ViewTweetsComponent, TweetRetweetChartComponent,  AdminHashtagsComponent,HashtagDetailsComponent,AddHashtagComponent  ]
+  declarations: [ DashboardComponent, LoadingSpinnerComponent, ViewTweetsComponent, TweetRetweetChartComponent  ]
 })
 export class DashboardModule { }

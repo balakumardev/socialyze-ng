@@ -32,7 +32,17 @@ export const routes: Routes = [
       title: 'Login'
     },
     component: LoginComponent
+  },
+   {
+    path: 'admin',
+    component: SimpleLayoutComponent,
+	children: [
+      {
+        path: '',
+        loadChildren: './admin-portal/admin-portal.module#AdminPortalModule'
+      }]
   }
+  
 ];
 
 @NgModule({
