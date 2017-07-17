@@ -8,6 +8,7 @@ import {DataService} from "../data.service";
 })
 export class HashtagDetailsComponent implements OnInit {
 	hashtags : any;
+	result : any;
 	@Input() id;
 	loaded : boolean=false;
 
@@ -21,6 +22,15 @@ export class HashtagDetailsComponent implements OnInit {
 			 
             }
           );
+  }
+  onclick(hashtag : string){
+	  this.data.removehashtag(hashtag).subscribe(
+		(response) => {
+			
+			 window.location.reload();
+			
+		}
+	  );
   }
 
 }
