@@ -1,15 +1,15 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
 
 //Layouts
-import { FullLayoutComponent } from './layouts/full-layout.component';
-import { SimpleLayoutComponent } from './layouts/simple-layout.component';
+import {FullLayoutComponent} from './layouts/full-layout.component';
+import {SimpleLayoutComponent} from './layouts/simple-layout.component';
 import {LoginComponent} from "./login/login.component";
 
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'dashboard',
     pathMatch: 'full',
   },
   {
@@ -33,20 +33,21 @@ export const routes: Routes = [
     },
     component: LoginComponent
   },
-   {
+  {
     path: 'admin',
     component: SimpleLayoutComponent,
-	children: [
+    children: [
       {
         path: '',
         loadChildren: './admin-portal/admin-portal.module#AdminPortalModule'
       }]
   }
-  
+
 ];
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes) ],
-  exports: [ RouterModule ]
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {
+}

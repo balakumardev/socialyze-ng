@@ -8,7 +8,7 @@ import {DataService} from "../data.service";
 })
 export class DashboardComponent implements OnInit {
   categories: any;
-  hashtags: any;
+  hashtags: any[] = [];
   nohashtags: boolean = false;
   loaded: boolean = false;
 
@@ -29,6 +29,7 @@ export class DashboardComponent implements OnInit {
         } else {
           //No category requested or invalid category
           //Showing all the categories.
+          this.loaded = false;
           this.data.getCategories().subscribe(
             (response) => {
               this.categories = response.json();
@@ -38,14 +39,19 @@ export class DashboardComponent implements OnInit {
                 this.data.getHashtags(category['id']).subscribe(
                   (response) => {
                     if (response.json().length > 0) {
+                      let resp = response.json();
                       if (first) {
-                        this.hashtags = response.json();
+                        this.hashtags = resp;
                         first = false;
-                      } else this.hashtags.concat(response.json());
+                      } else {
+                        this.hashtags = this.hashtags.concat(resp);
+                      }
                     }
 
-                    if (++count == this.categories.length)
+                    if (++count == this.categories.length) {
+                      console.log(this.hashtags);
                       this.loaded = true;
+                    }
                   }
                 );
               }
@@ -53,7 +59,7 @@ export class DashboardComponent implements OnInit {
           );
         }
 
-        if(this.hashtags == null || this.hashtags.length == 0) {
+        if (this.hashtags == null || this.hashtags.length == 0) {
           this.nohashtags = true;
         }
       }

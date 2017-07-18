@@ -6,9 +6,10 @@ import {Http} from "@angular/http";
 
 @Injectable()
 export class DataService {
-  constructor(private http: Http) {}
+  constructor(private http: Http) {
+  }
 
-  getHashtags(id : number) {
+  getHashtags(id: number) {
     return this.http.get('http://app.socialyze.in:8080/hs/' + id);
   }
 
@@ -17,17 +18,18 @@ export class DataService {
   }
 
   getTweets(hashtag: string, num: number) {
-    return this.http.get('http://app.socialyze.in:8080/hs/'+ hashtag + '/' + num);
+    return this.http.get('http://app.socialyze.in:8080/hs/' + hashtag + '/' + num);
   }
 
   getNumTweetsByUser(id: string, hashtag: string) {
-    return this.http.get('http://app.socialyze.in:8080/hashtag/'+hashtag+'/'+id);
+    return this.http.get('http://app.socialyze.in:8080/hashtag/' + hashtag + '/' + id);
   }
-  putHashtag(id: number,hashtag : string){
-	  return this.http.get('http://app.socialyze.in:8080/hashtags/'+hashtag+'?category='+id);
-  }
-  removehashtag(hashtag: string){
-	  	  return this.http.get('http://app.socialyze.in:8080/removehashtag/'+hashtag);
 
+  putHashtag(id: number, hashtag: string) {
+    return this.http.get('http://app.socialyze.in:8080/hashtags/' + hashtag + '?category=' + id);
+  }
+
+  removehashtag(hashtag: string) {
+    return this.http.get('http://app.socialyze.in:8080/removehashtag/' + hashtag);
   }
 }
