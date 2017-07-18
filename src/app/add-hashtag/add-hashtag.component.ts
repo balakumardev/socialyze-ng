@@ -9,17 +9,28 @@ import {NgForm} from "@angular/forms";
 })
 export class AddHashtagComponent implements OnInit {
 	hashtags: any;
+	categories : any;
 	id : any;
 	name : any;
+	loaded: boolean=false;
   constructor(private data: DataService) { }
 
-  ngOnInit() {	  
+  ngOnInit() {	
+	this.data.getCategories().subscribe(
+            (response) => {
+              this.categories = response.json();
+			  console.log(this.categories);
+			   this.loaded = true;
+            }
+          );
+		  
+  
   }
 	logForm(form: NgForm) {
  this.data.putHashtag(form.value.id,form.value.name).subscribe(
             (response) => {
-              this.hashtags = response.json();
-			  console.log(this.hashtags);
+              
+			  
             }
           );
 		  form.reset();
