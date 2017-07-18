@@ -12,7 +12,7 @@ import {LoadingSpinnerComponent} from "../loading-spinner/loading-spinner.compon
 import {ViewTweetsComponent} from "../view-tweets/view-tweets.component";
 import { TweetRetweetChartComponent } from './tweet-retweet-chart/tweet-retweet-chart.component';
 import { SwitchComponent } from './switch/switch.component';
-import { UiSwitchModule } from 'angular2-ui-switch';
+
 
 @NgModule({
   imports: [
@@ -22,8 +22,7 @@ import { UiSwitchModule } from 'angular2-ui-switch';
     BsDropdownModule,
     HttpModule,
     LaddaModule,
-	FormsModule,
-	UiSwitchModule
+	FormsModule
   ],
   declarations: [ DashboardComponent, LoadingSpinnerComponent, ViewTweetsComponent, TweetRetweetChartComponent ,SwitchComponent ]
 })

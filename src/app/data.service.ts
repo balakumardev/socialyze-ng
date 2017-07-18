@@ -32,8 +32,8 @@ export class DataService {
   removehashtag(hashtag: string) {
     return this.http.get('http://app.socialyze.in:8080/removehashtag/' + hashtag);
   }
-  getstatus(name : string){
-    return this.http.get('http://app.socialyze.in:8080/getstatus/'+name);
+  updatestatus(name : string){
+    return this.http.put('http://app.socialyze.in:8080/updatestatus/'+name,name);
   }
 
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit,Input } from '@angular/core';
-
+import {DataService} from "../../data.service";
 @Component({
   selector: 'app-switch',
   templateUrl: './switch.component.html',
@@ -7,10 +7,15 @@ import { Component, OnInit,Input } from '@angular/core';
 })
 export class SwitchComponent implements OnInit {
   @Input() name : string;
-  constructor() { }
+  status : boolean=true;
+  constructor(private data: DataService) { }
 
   ngOnInit() {
-  console.log(this.name);
   }
-
+  onchange(event : any){
+  event.target.value=this.data.updatestatus(this.name).subscribe(
+         (response) => {
+         }
+       );
+  }
 }
