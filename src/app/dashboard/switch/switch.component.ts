@@ -11,6 +11,11 @@ export class SwitchComponent implements OnInit {
   constructor(private data: DataService) { }
 
   ngOnInit() {
+  this.data.getstatus(this.name).subscribe(
+         (response) => {
+          this.status=(response.text()=="false");
+         }
+       );
   }
   onchange(event : any){
   event.target.value=this.data.updatestatus(this.name).subscribe(
