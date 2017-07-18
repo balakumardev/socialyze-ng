@@ -1,4 +1,4 @@
-import {Component, OnInit} from "@angular/core";
+import {Component, OnInit,Input,ViewChild,ElementRef} from "@angular/core";
 import {ActivatedRoute, Params, Router} from "@angular/router";
 import {DataService} from "../data.service";
 
@@ -14,8 +14,9 @@ export class DashboardComponent implements OnInit {
 
   constructor(private router: Router, private thisRoute: ActivatedRoute, private data: DataService) {
   }
-
+	@ViewChild('onoroff') checked : ElementRef;
   ngOnInit(): void {
+	
     this.thisRoute.queryParams.subscribe(
       (params: Params) => {
         this.loaded = false;

@@ -5,6 +5,7 @@
         <div class="card-header">
           <i><b>#{{hashtag['hashtag']}}</b></i>
           <small>Summary</small>
+		 <app-switch class="pull-right" [name]="hashtag['hashtag']"></app-switch>
         </div>
         <div class="card-block">
           <div class="row">
@@ -17,9 +18,9 @@
 				   <a class="font-weight-bold font-xs btn-block text-muted" [routerLink]="['view-tweets']"
                      [queryParams]="{hashtag: hashtag['hashtag'] }">
                   <div class="text-muted text-uppercase font-weight-bold font-xs" >Tweets</div></a>
-                
+
           </div>
-              
+
             </div>
             <div class="col-sm-4">
 			<div style="width:50%;margin:0px auto;">
@@ -37,7 +38,7 @@
                   <div class="h5 text-warning mb-0 mt-h">{{hashtag['sentiment']}}%</div>
 				  <a class="font-weight-bold font-xs btn-block text-muted" href="#">
                   <div class="text-muted text-uppercase font-weight-bold font-xs">Sentimental Score</div></a>
-               
+
               </div>
             </div>
           </div>
@@ -46,9 +47,9 @@
               <div style="width:50%;margin:30px auto;">
                   <i class="fa fa-twitter-square bg-primary p-1 font-2xl mr-1 float-left"></i>
                   <div class="h5 text-primary mb-0 pt-1">{{hashtag['retweets']}}</div>
-				  
+
                   <div class="text-muted text-uppercase font-weight-bold font-xs">Retweets</div>
-                
+
               </div>
             </div><!--/.col-->
             <div class="col-sm-4">
@@ -57,7 +58,7 @@
                   <i class="fa fa-thumbs-up bg-success p-1 font-2xl mr-1 float-left"></i></a>
                   <div class="h5 text-success mb-0 pt-1">109,50</div>
                   <a class="font-weight-bold font-xs btn-block text-muted" [routerLink]="['tweet-retweet-chart']" [queryParams]="{tweets : hashtag['numTweets']-hashtag['retweets'],retweets: hashtag['retweets']}"><div class="text-muted text-uppercase font-weight-bold font-xs">Likes</div></a>
-                
+
               </div>
             </div><!--/.col-->
             <div class="col-sm-4">

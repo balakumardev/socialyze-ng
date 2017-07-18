@@ -24,6 +24,12 @@
 			<div class="col-sm-12" style="font-family:Arial;margin-top:3%;text-align:center;font-size:15px;font-weight:bold;">
 			Sentimental Score : {{hashtag['sentiment']}}
 			</div>
+			<label class="switch switch-text switch-pill switch-primary pull-right">
+				<input type="checkbox" class="switch-input" checked name="enabled" (change)="setStatus($event)" [value]="status">
+				<span class="switch-label" data-on="On" data-off="Off"></span>
+				<span class="switch-handle"></span>
+			</label>
+
 			<div class="col-sm-12" style="font-family:Arial;margin-top:3%;text-align:center;font-size:15px;font-weight:bold;">
 			<Button class="button button3" (click)="onclick(hashtag['hashtag'])">Trash</Button>
 			</div>

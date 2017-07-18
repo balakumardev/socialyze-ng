@@ -11,7 +11,8 @@ import {LaddaModule} from "angular2-ladda";
 import {LoadingSpinnerComponent} from "../loading-spinner/loading-spinner.component";
 import {ViewTweetsComponent} from "../view-tweets/view-tweets.component";
 import { TweetRetweetChartComponent } from './tweet-retweet-chart/tweet-retweet-chart.component';
-
+import { SwitchComponent } from './switch/switch.component';
+import { UiSwitchModule } from 'angular2-ui-switch';
 
 @NgModule({
   imports: [
@@ -21,8 +22,9 @@ import { TweetRetweetChartComponent } from './tweet-retweet-chart/tweet-retweet-
     BsDropdownModule,
     HttpModule,
     LaddaModule,
-	FormsModule
+	FormsModule,
+	UiSwitchModule
   ],
-  declarations: [ DashboardComponent, LoadingSpinnerComponent, ViewTweetsComponent, TweetRetweetChartComponent  ]
+  declarations: [ DashboardComponent, LoadingSpinnerComponent, ViewTweetsComponent, TweetRetweetChartComponent ,SwitchComponent ]
 })
 export class DashboardModule { }

@@ -11,7 +11,7 @@ export class HashtagDetailsComponent implements OnInit {
 	result : any;
 	@Input() id;
 	loaded : boolean=false;
-
+	status : boolean;
   constructor(private data: DataService) { }
 
   ngOnInit() {
@@ -19,16 +19,18 @@ export class HashtagDetailsComponent implements OnInit {
             (response) => {
               this.hashtags = response.json();
               this.loaded = true;
-			 
             }
           );
+
   }
+
+
   onclick(hashtag : string){
 	  this.data.removehashtag(hashtag).subscribe(
 		(response) => {
-			
+
 			 window.location.reload();
-			
+
 		}
 	  );
   }
