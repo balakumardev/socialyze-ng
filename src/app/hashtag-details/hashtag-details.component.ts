@@ -29,7 +29,6 @@ export class HashtagDetailsComponent implements OnInit {
 	  this.data.removehashtag(hashtag).subscribe(
 		(response) => {
 
-			 window.location.reload();
 
 		}
 	  );
