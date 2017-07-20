@@ -15,7 +15,7 @@ export class AddHashtagComponent implements OnInit {
 	loaded: boolean=false;
   constructor(private data: DataService) { }
 
-  ngOnInit() {	
+  ngOnInit() {
 	this.data.getCategories().subscribe(
             (response) => {
               this.categories = response.json();
@@ -23,14 +23,14 @@ export class AddHashtagComponent implements OnInit {
 			   this.loaded = true;
             }
           );
-		  
-  
+
+
   }
 	logForm(form: NgForm) {
  this.data.putHashtag(form.value.id,form.value.name).subscribe(
             (response) => {
-              
-			  
+                console.log(form.value.name.value.trim());
+
             }
           );
 		  form.reset();
