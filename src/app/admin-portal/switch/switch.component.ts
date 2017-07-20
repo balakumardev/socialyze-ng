@@ -8,12 +8,16 @@ import {DataService} from "../../data.service";
 export class SwitchComponent implements OnInit {
   @Input() name : string;
   status : boolean=true;
+  st : string;
   constructor(private data: DataService) { }
 
   ngOnInit() {
   this.data.getstatus(this.name).subscribe(
          (response) => {
-          this.status=(response.text()=="false");
+          this.st=response.text();
+          if(this.st=="false"){
+            this.status=false;
+          }
          }
        );
   }

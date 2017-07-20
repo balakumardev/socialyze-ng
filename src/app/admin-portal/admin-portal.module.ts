@@ -9,6 +9,8 @@ import { AdminPortalRoutingModule } from './admin-portal-routing.module';
 import {HttpModule} from "@angular/http";
 import {LaddaModule} from "angular2-ladda";
 import { AdminHashtagsComponent } from '../admin-hashtags/admin-hashtags.component';
+import { SwitchComponent } from './switch/switch.component';
+import { MoreHashtagDetailsComponent } from './more-hashtag-details/more-hashtag-details.component';
 
 @NgModule({
   imports: [
@@ -19,8 +21,8 @@ import { AdminHashtagsComponent } from '../admin-hashtags/admin-hashtags.compone
     HttpModule,
     LaddaModule,
 	FormsModule
-	
+
   ],
-  declarations: [ HashtagDetailsComponent,AddHashtagComponent,AdminHashtagsComponent]
+  declarations: [ HashtagDetailsComponent,AddHashtagComponent,AdminHashtagsComponent,SwitchComponent, MoreHashtagDetailsComponent]
 })
 export class AdminPortalModule { }

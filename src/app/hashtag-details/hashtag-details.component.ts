@@ -18,6 +18,7 @@ export class HashtagDetailsComponent implements OnInit {
 	   this.data.getHashtags(this.id).subscribe(
             (response) => {
               this.hashtags = response.json();
+
               this.loaded = true;
             }
           );
