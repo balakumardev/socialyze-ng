@@ -4,77 +4,73 @@
       <div class="card">
         <div class="card-header">
           <i><b>#{{hashtag['hashtag']}}</b></i>
-          <small>Summary</small>
-
         </div>
-        <div class="card-block" >
+        <div class="card-block">
           <div class="row">
-            <div class="col-sm-4" >
-			<div style="width:50%;margin:0px auto;">
-				<a class="font-weight-bold font-xs btn-block text-muted" [routerLink]="['view-tweets']"
-                     [queryParams]="{hashtag: hashtag['hashtag'] }">
-                  <i class="fa fa-twitter bg-primary p-1 font-2xl mr-1 float-left"></i></a>
-                  <div class="h5 text-primary mb-0 mt-h" >{{hashtag['numTweets']}}</div>
-				   <a class="font-weight-bold font-xs btn-block text-muted" [routerLink]="['view-tweets']"
-                     [queryParams]="{hashtag: hashtag['hashtag'] }">
-                  <div class="text-muted text-uppercase font-weight-bold font-xs" >Tweets</div></a>
-
-          </div>
-
-            </div>
             <div class="col-sm-4">
-			<div style="width:50%;margin:0px auto;">
-					<a class="font-weight-bold font-xs btn-block text-muted" href="#">
-                  <i class="fa fa-users bg-inverse p-1 font-2xl mr-1 float-left"></i></a>
-                  <div class="h5 text-inverse mb-0 mt-h">{{hashtag['numUsers']}}</div>
-				  <a class="font-weight-bold font-xs btn-block text-muted" href="#">
-                  <div class="text-muted text-uppercase font-weight-bold font-xs">Users</div></a>
-			</div>
-            </div>
-            <div class="col-sm-4">
-			<div style="width:50%;margin:0px auto;">
-              <a class="font-weight-bold font-xs btn-block text-muted" href="#">
-                  <i class="fa fa-users bg-warning p-1 font-2xl mr-1 float-left"></i></a>
-                  <div class="h5 text-warning mb-0 mt-h">{{hashtag['sentiment']}}%</div>
-				  <a class="font-weight-bold font-xs btn-block text-muted" href="#">
-                  <div class="text-muted text-uppercase font-weight-bold font-xs">Sentimental Score</div></a>
-
+              <div class="card" role="button" [routerLink]="['view-tweets']" [queryParams]="{hashtag: hashtag['hashtag'] }">
+                <div class="card-block p-0 clearfix">
+                  <i class="fa fa-twitter bg-primary p-2 font-2xl mr-1 float-left"></i>
+                  <div class="h5 text-primary mb-0 pt-1">{{hashtag['numTweets']}}</div>
+                  <a class="font-weight-bold font-xs btn-block text-muted" ><div class="text-muted text-uppercase font-weight-bold font-xs">Tweets</div></a>
+                </div>
               </div>
-            </div>
+            </div><!--/.col-->
+            <div class="col-sm-4">
+              <div class="card" role="button">
+                <div class="card-block p-0 clearfix">
+                  <i class="fa fa-users bg-inverse p-2 font-2xl mr-1 float-left"></i>
+                  <div class="h5 text-inverse mb-0 pt-1">{{hashtag['numUsers']}}</div>
+                  <a class="font-weight-bold font-xs btn-block text-muted" ><div class="text-muted text-uppercase font-weight-bold font-xs">Users</div></a>
+                </div>
+              </div>
+            </div><!--/.col-->
+            <div class="col-sm-4">
+              <div class="card" role="button">
+                <div class="card-block p-0 clearfix">
+                  <i class="fa fa-users bg-warning p-2 font-2xl mr-1 float-left"></i>
+                  <div class="h5 text-warning mb-0 pt-1">{{hashtag['sentiment']}}%</div>
+                  <a class="font-weight-bold font-xs btn-block text-muted" ><div class="text-muted text-uppercase font-weight-bold font-xs">Sentimental Score</div></a>
+                </div>
+              </div>
+            </div><!--/.col-->
+
           </div>
           <div class="row">
             <div class="col-sm-4">
-              <div style="width:50%;margin:30px auto;">
-                  <i class="fa fa-twitter-square bg-primary p-1 font-2xl mr-1 float-left"></i>
+              <div class="card">
+                <div class="card-block p-0 clearfix">
+                  <i class="fa fa-twitter-square bg-primary p-2 font-2xl mr-1 float-left"></i>
                   <div class="h5 text-primary mb-0 pt-1">{{hashtag['retweets']}}</div>
-
                   <div class="text-muted text-uppercase font-weight-bold font-xs">Retweets</div>
-
+                </div>
               </div>
             </div><!--/.col-->
             <div class="col-sm-4">
-				<div style="width:50%;margin:30px auto;">
-				<a class="font-weight-bold font-xs btn-block text-muted" [routerLink]="['tweet-retweet-chart']" [queryParams]="{tweets : hashtag['numTweets']-hashtag['retweets'],retweets: hashtag['retweets']}">
-                  <i class="fa fa-thumbs-up bg-success p-1 font-2xl mr-1 float-left"></i></a>
+              <div class="card" role="button" [routerLink]="['tweet-retweet-chart']" [queryParams]="{tweets : hashtag['numTweets'],retweets: hashtag['retweets']}">
+                <div class="card-block p-0 clearfix">
+                  <i class="fa fa-thumbs-up bg-success p-2 font-2xl mr-1 float-left"></i>
                   <div class="h5 text-success mb-0 pt-1">109,50</div>
-                  <a class="font-weight-bold font-xs btn-block text-muted" [routerLink]="['tweet-retweet-chart']" [queryParams]="{tweets : hashtag['numTweets']-hashtag['retweets'],retweets: hashtag['retweets']}"><div class="text-muted text-uppercase font-weight-bold font-xs">Likes</div></a>
-
+                  <a class="font-weight-bold font-xs btn-block text-muted" ><div class="text-muted text-uppercase font-weight-bold font-xs">Likes</div></a>
+                </div>
               </div>
             </div><!--/.col-->
             <div class="col-sm-4">
-              <div style="width:50%;margin:30px auto;">
-                  <i class="fa fa-globe bg-danger p-1 font-2xl mr-1 float-left"></i>
+              <div class="card">
+                <div class="card-block p-0 clearfix">
+                  <i class="fa fa-globe bg-danger p-2 font-2xl mr-1 float-left"></i>
                   <div class="h5 text-danger mb-0 pt-1">{{hashtag['reach']}}</div>
                   <div class="text-muted text-uppercase font-weight-bold font-xs">Reach</div>
+                </div>
               </div>
             </div><!--/.col-->
           </div>
-        <!--  <div class="row">
-            <div class="col-xs-4">
-              <app-tweet-retweet-chart [tweets]="hashtag['numTweets']"
-                                       [retweets]="hashtag['retweets']"></app-tweet-retweet-chart>
-            </div>
-          </div>-->
+          <!--  <div class="row">
+              <div class="col-xs-4">
+                <app-tweet-retweet-chart [tweets]="hashtag['numTweets']"
+                                         [retweets]="hashtag['retweets']"></app-tweet-retweet-chart>
+              </div>
+            </div>-->
         </div>
       </div>
     </div>
