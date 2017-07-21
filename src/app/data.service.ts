@@ -10,36 +10,36 @@ export class DataService {
   }
 
   getHashtags(id: number) {
-    return this.http.get('http://localhost:8081/hs/' + id);
+    return this.http.get('http://app.socialyze.in:8080/hs/' + id);
   }
 
   getCategories() {
-    return this.http.get('http://localhost:8081/hashtag/tweetcategories');
+    return this.http.get('http://app.socialyze.in:8080/hashtag/tweetcategories');
   }
 
   getTweets(hashtag: string, num: number) {
-    return this.http.get('http://localhost:8081/hs/' + hashtag + '/' + num);
+    return this.http.get('http://app.socialyze.in:8080/hs/' + hashtag + '/' + num);
   }
 
   getNumTweetsByUser(id: string, hashtag: string) {
-    return this.http.get('http://localhost:8081/hashtag/' + hashtag + '/' + id);
+    return this.http.get('http://app.socialyze.in:8080/hashtag/' + hashtag + '/' + id);
   }
   gettrackedhashtagstatus(hashtag: string) {
-    return this.http.get('http://localhost:8081/tracked_hashtag_status/' + hashtag);
+    return this.http.get('http://app.socialyze.in:8080/tracked_hashtag_status/' + hashtag);
   }
 
   putHashtag(id: number, hashtag: string) {
-    return this.http.get('http://localhost:8081/hashtags/' + hashtag + '?category=' + id);
+    return this.http.get('http://app.socialyze.in:8080/hashtags/' + hashtag + '?category=' + id);
   }
 
   removehashtag(hashtag: string) {
-    return this.http.get('http://localhost:8081/removehashtag/' + hashtag);
+    return this.http.get('http://app.socialyze.in:8080/removehashtag/' + hashtag);
   }
   updatestatus(name : string){
-    return this.http.put('http://localhost:8081/updatestatus/'+name,name);
+    return this.http.put('http://app.socialyze.in:8080/updatestatus/'+name,name);
   }
   getstatus(name : string){
-  return this.http.get('http://localhost:8081/getstatus/'+name);
+  return this.http.get('http://app.socialyze.in:8080/getstatus/'+name);
 
   }
 
