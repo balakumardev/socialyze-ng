@@ -11,6 +11,7 @@ import {LaddaModule} from "angular2-ladda";
 import { AdminHashtagsComponent } from '../admin-hashtags/admin-hashtags.component';
 import { SwitchComponent } from './switch/switch.component';
 import { MoreHashtagDetailsComponent } from './more-hashtag-details/more-hashtag-details.component';
+import {TabsModule} from "ng2-bootstrap";
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import { MoreHashtagDetailsComponent } from './more-hashtag-details/more-hashtag
     BsDropdownModule,
     HttpModule,
     LaddaModule,
-	FormsModule
+	FormsModule,
+    TabsModule
 
   ],
   declarations: [ HashtagDetailsComponent,AddHashtagComponent,AdminHashtagsComponent,SwitchComponent, MoreHashtagDetailsComponent]

@@ -23,6 +23,7 @@ import {DataService} from "./data.service";
 import {HttpModule} from "@angular/http";
 import { LoginComponent } from './login/login.component';
 import {FormsModule} from "@angular/forms";
+import { AdminLayoutComponent } from './admin-layout/admin-layout.component';
 
 
 
@@ -45,7 +46,8 @@ import {FormsModule} from "@angular/forms";
     BreadcrumbsComponent,
     SIDEBAR_TOGGLE_DIRECTIVES,
     AsideToggleDirective,
-    LoginComponent
+    LoginComponent,
+    AdminLayoutComponent
   ],
   providers: [{
     provide: LocationStrategy,

@@ -1,3 +1,45 @@
+<div class="col-md-12">
+  <div class="alert alert-success" *ngIf="success">
+    Hashtag added successfully.
+  </div>
+
+  <form class="form-horizontal " #form="ngForm" (ngSubmit)="logForm(form)">
+    <div class="card">
+      <div class="card-header">
+        <strong>Add Hashtag</strong>
+      </div>
+      <div class="card-block">
+        <div class="form-group row">
+          <label class="col-md-3 form-control-label" for="category">Category</label>
+          <div class="col-md-9">
+            <select id="category" name="category" class="form-control" ngModel *ngIf="loaded; else loadingText">
+              <option *ngFor="let x of categories" [ngValue]="x.id">{{x.name}}</option>
+            </select>
+            <ng-template #loadingText>
+              <input type="text" class="form-control form-control-static" value="Loading..." disabled>
+            </ng-template>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-md-3 form-control-label" for="name">Hashtag</label>
+          <div class="col-md-9">
+            <div class="input-group">
+              <span class="input-group-addon">#</span>
+              <input type="text" id="name" name="name" class="form-control" placeholder="YourHashtag" ngModel>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Add</button>
+        <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
+      </div>
+
+    </div>
+
+  </form>
+</div>
+<!--
 
 <div class = "card" style="width:30%;margin:0 auto;">
 <div class="card-block">
@@ -6,9 +48,9 @@
    </div>
    <form #form="ngForm" (ngSubmit)="logForm(form)">
       <div class = "form-group" style="font-weight:bold;font-family:Arial">
-         <label for = "hashtagid">ID</label>
+         <label for = "id">ID</label>
          <div *ngIf="loaded">
-            <select  class="form-control selcls" name="id" ngModel>
+            <select  class="form-control selcls" name="id" id="id" ngModel>
                 <option *ngFor="let x of categories" [ngValue]="x.id" >{{x.name}}</option>
             </select>
         </div>
@@ -22,3 +64,4 @@
    </form>
 </div>
 </div>
+-->

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {DataService} from "../data.service";
 import {NgForm} from "@angular/forms";
 
@@ -8,31 +8,30 @@ import {NgForm} from "@angular/forms";
   styleUrls: ['./add-hashtag.component.scss']
 })
 export class AddHashtagComponent implements OnInit {
-	hashtags: any;
-	categories : any;
-	id : any;
-	name : any;
-	loaded: boolean=false;
-  constructor(private data: DataService) { }
+  hashtags: any;
+  categories: any;
+  category: any;
+  name: any;
+  loaded: boolean = false;
+  success: boolean = false;
+  constructor(private data: DataService) {
+  }
 
   ngOnInit() {
-	this.data.getCategories().subscribe(
-            (response) => {
-              this.categories = response.json();
-			  console.log(this.categories);
-			   this.loaded = true;
-            }
-          );
-
-
+    this.data.getCategories().subscribe(
+      (response) => {
+        this.categories = response.json();
+        this.loaded = true;
+      }
+    );
   }
-	logForm(form: NgForm) {
- this.data.putHashtag(form.value.id,form.value.name).subscribe(
-            (response) => {
-                console.log(form.value.name.value.trim());
 
-            }
-          );
-		  form.reset();
+  logForm(form: NgForm) {
+    this.data.putHashtag(form.value.category, form.value.name).subscribe(
+      (response) => {
+        this.success = true;
+      }
+    );
+    form.reset();
   }
 }

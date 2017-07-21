@@ -1,24 +1,30 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import { AdminHashtagsComponent } from '../admin-hashtags/admin-hashtags.component';
-import { HashtagDetailsComponent } from '../hashtag-details/hashtag-details.component';
-import { AddHashtagComponent } from '../add-hashtag/add-hashtag.component';
+import {AdminHashtagsComponent} from '../admin-hashtags/admin-hashtags.component';
+import {AddHashtagComponent} from '../add-hashtag/add-hashtag.component';
 const routes: Routes = [
   {
     path: '',
+    data: {
+      title: 'Hashtag Management'
+    },
     children: [
       {
         path: '',
+        redirectTo: 'view-hashtags'
+      },
+      {
+        path: 'view-hashtags',
         component: AdminHashtagsComponent,
         data: {
-          title: 'admin'
+          title: 'View Hashtags'
         }
       },
       {
         path: 'add-hashtag',
-        component: AddHashtagComponent ,
+        component: AddHashtagComponent,
         data: {
-          title: 'add-hashtag'
+          title: 'Add Hashtag'
         }
       }
     ]
