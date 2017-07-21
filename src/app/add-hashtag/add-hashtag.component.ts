@@ -29,7 +29,7 @@ export class AddHashtagComponent implements OnInit {
 	logForm(form: NgForm) {
  this.data.putHashtag(form.value.id,form.value.name).subscribe(
             (response) => {
-                console.log(form.value.name.value.trim());
+                
 
             }
           );
