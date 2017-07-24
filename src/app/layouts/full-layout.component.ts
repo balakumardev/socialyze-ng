@@ -1,28 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import {ChangeDetectorRef, Component, DoCheck, NgZone, OnChanges, OnInit} from '@angular/core';
 import {DataService} from "../data.service";
+import {AuthService} from "../auth.service";
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './full-layout.component.html'
 })
-export class FullLayoutComponent implements OnInit {
+export class FullLayoutComponent implements OnInit, DoCheck {
   categories: Object[];
   loaded: boolean = false;
-  constructor(private data: DataService) { }
+  authenticated: boolean = false;
+  constructor(private data: DataService, public auth: AuthService, private change: NgZone) { }
 
-  public disabled:boolean = false;
-  public status:{isopen:boolean} = {isopen: false};
-
-  public toggled(open:boolean):void {
-    console.log('Dropdown is now: ', open);
+  ngDoCheck() {
+    this.authenticated = this.auth.isAuthenticated();
   }
-
-  public toggleDropdown($event:MouseEvent):void {
-    $event.preventDefault();
-    $event.stopPropagation();
-    this.status.isopen = !this.status.isopen;
-  }
-
 
   ngOnInit(): void {
     this.data.getCategories().subscribe(
@@ -33,5 +25,16 @@ export class FullLayoutComponent implements OnInit {
         this.loaded = true;
       }
     );
+  }
+
+  login() {
+    this.auth.login();
+    this.change.run(() => {});
+
+    this.authenticated = this.auth.isAuthenticated();
+  }
+
+  showProfile() {
+    console.info(this.auth.getUserInfo()['photoURL']);
   }
 }
