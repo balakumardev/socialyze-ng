@@ -24,6 +24,8 @@ import {HttpModule} from "@angular/http";
 import { LoginComponent } from './login/login.component';
 import {FormsModule} from "@angular/forms";
 import { AdminLayoutComponent } from './admin-layout/admin-layout.component';
+import {AuthService} from "./auth.service";
+import {ModalModule} from "ng2-bootstrap";
 
 
 
@@ -36,7 +38,8 @@ import { AdminLayoutComponent } from './admin-layout/admin-layout.component';
     TabsModule.forRoot(),
     ChartsModule,
     HttpModule,
-    FormsModule
+    FormsModule,
+    ModalModule
   ],
   declarations: [
     AppComponent,
@@ -53,7 +56,8 @@ import { AdminLayoutComponent } from './admin-layout/admin-layout.component';
     provide: LocationStrategy,
     useClass: HashLocationStrategy
   },
-    DataService
+    DataService,
+    AuthService
   ],
   bootstrap: [ AppComponent ]
 })

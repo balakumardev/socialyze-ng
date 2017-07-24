@@ -103,20 +103,22 @@
         </a>
       </div>
     </li>-->
-    <li class="nav-item">
-      <button class="btn btn-primary" routerLink="/login">Login</button>
+    <li class="nav-item" *ngIf="!authenticated">
+      <button class="btn btn-secondary" (click)="login()">Login</button>
     </li>
-    <li class="nav-item dropdown" dropdown placement="bottom right">
+    <li class="nav-item dropdown" dropdown placement="bottom right" *ngIf="authenticated">
+      <ng-template [ngIf]="auth.isAuthenticated()">
       <a class="nav-link nav-pill avatar" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
          aria-expanded="false" dropdownToggle>
-        <img src="assets/img/avatars/6.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
+        <img [src]="auth.getUserInfo()['photoURL']" class="img-avatar" alt="admin@bootstrapmaster.com">
         <!--<span class="badge badge-pill badge-danger">9</span>-->
       </a>
       <div class="dropdown-menu dropdown-menu-right" *dropdownMenu aria-labelledby="simple-dropdown">
-        <a class="dropdown-item" routerLink="#"><i class="fa fa-user"></i> Profile</a>
+        <a class="dropdown-item" (click)="profileModal.show()"><i class="fa fa-user"></i> Profile</a>
         <a class="dropdown-item" routerLink='/admin'><i class="fa fa-hashtag"></i> Manage Hashtags</a>
-        <a class="dropdown-item" routerLink="#"><i class="fa fa-lock"></i> Logout</a>
+        <a class="dropdown-item" (click)="auth.logout()"><i class="fa fa-lock"></i> Logout</a>
       </div>
+      </ng-template>
     </li>
     <!--<li class="nav-item hidden-md-down">
       <a class="nav-link navbar-toggler aside-menu-toggler" href="#">&#9776;</a>
@@ -133,7 +135,7 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true}"
+          <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
              [routerLink]="['/dashboard']"><i class="fa fa-home"></i> Dashboard </a>
         </li>
 
@@ -448,3 +450,47 @@
     Powered by <a href="https://genesisui.com">GenesisUI</a>
   </span>-->
 </footer>
+
+<div bsModal #profileModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true" >
+  <ng-template [ngIf]="auth.isAuthenticated()">
+
+  <div class="modal-dialog modal-primary" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Profile</h4>
+        <button type="button" class="close" (click)="profileModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!--<img [src]="auth.getUserInfo()['photoURL']" class="img-fluid img-circle align-content-center">-->
+
+        <table class="table table-condensed">
+
+          <tbody>
+          <tr>
+            <td colspan="2" class="align-content-center">
+              <img [src]="auth.getUserInfo()['photoURL']" class="img-circle" style="width:300px; height:auto; display:block; margin:0 auto"/>
+            </td>
+          </tr>
+          <tr>
+            <th>Name</th>
+            <td>{{auth.getUserInfo()['displayName']}}</td>
+          </tr>
+          <tr>
+            <th>Email</th>
+            <td>{{auth.getUserInfo()['email']}}</td>
+          </tr>
+          </tbody>
+        </table>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="profileModal.hide()">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+  </ng-template>
+
+</div><!-- /.modal -->
