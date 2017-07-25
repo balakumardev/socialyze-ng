@@ -14,22 +14,22 @@ export class MoreHashtagDetailsComponent implements OnInit {
   constructor(private data: DataService) { }
 
   ngOnInit() {
-    this.hashtag=this.ihashtag;
-    this.data.gettrackedhashtagstatus(this.hashtag['hashtag']).subscribe(
-      (response) => {
-        this.st = response.text();
-        if(this.st=="false"){
-          this.status=false;
-        }
-      }
-    );
+  this.hashtag=this.ihashtag;
+  this.data.gettrackedhashtagstatus(this.hashtag['hashtag']).subscribe(
+          (response) => {
+            this.st = response.text();
+            if(this.st=="false"){
+              this.status=false;
+            }
+          }
+        );
   }
   onclick(hashtag : string){
-    this.data.removehashtag(hashtag).subscribe(
-      (response) => {
-        window.location.reload();
-      }
-    );
+	  this.data.removehashtag(hashtag).subscribe(
+		(response) => {
+    
+		}
+	  );
   }
 
 }
