@@ -1,36 +1,36 @@
 
-  <div class="card"  style="box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);background-image:url('https://goo.gl/gN1HN7')" *ngIf="status">
+<div class="card"  style="box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);background-image:url('https://goo.gl/gN1HN7')" *ngIf="status">
 
-      <div class="card-block" >
-        <div class="row">
-          <div class="col-sm-12" >
-            <div class="row" style="border-bottom:thin solid #808080;">
-            <div class="col-sm-8" style="font-family:Arial;text-align:center;font-weight:bold;font-size:20px;color:blue">
+  <div class="card-block" >
+    <div class="row">
+      <div class="col-sm-12" >
+        <div class="row" style="border-bottom:thin solid #808080;">
+          <div class="col-sm-8" style="font-family:Arial;text-align:center;font-weight:bold;font-size:20px;color:blue">
             <span >#{{hashtag['hashtag']}}</span>
-            </div>
-            <div class="col-sm-4">
-              <app-switch  [name]="hashtag['hashtag']"></app-switch>
-            </div>
           </div>
+          <div class="col-sm-4">
+            <app-switch  [name]="hashtag['hashtag']"></app-switch>
           </div>
-            <div class="col-sm-5" style="font-family:Arial;text-align:center;font-size:15px;font-weight:bold;;margin-top:7%" >
-            Tweets : {{hashtag['numTweets']}}
-            </div>
-            <div class="col-sm-7" style="font-family:Arial;text-align:center;font-size:15px;font-weight:bold;;margin-top:7%" >
-            Retweets : {{hashtag['retweets']}}
-            </div>
+        </div>
+      </div>
+      <div class="col-sm-5" style="font-family:Arial;text-align:center;font-size:15px;font-weight:bold;;margin-top:7%" >
+        Tweets : {{hashtag['numTweets']}}
+      </div>
+      <div class="col-sm-7" style="font-family:Arial;text-align:center;font-size:15px;font-weight:bold;;margin-top:7%" >
+        Retweets : {{hashtag['retweets']}}
+      </div>
 
-            <div class="col-sm-5" style="font-family:Arial;margin-top:7%;text-align:center;font-size:15px;font-weight:bold;" >
-            Users : {{hashtag['numUsers']}}
-            </div>
-            <div class="col-sm-7" style="font-family:Arial;margin-top:7%;text-align:center;font-size:15px;font-weight:bold;" >
-            Reach : {{hashtag['reach']}}
-            </div>
-            <div class="col-sm-7" style="font-family:Arial;margin-top:7%;font-size:15px;font-weight:bold;padding-top:4%" >
-            Sentimental Score : {{hashtag['sentiment']}}
-            </div>
-            <div class="col-sm-5" style="font-family:Arial;margin-top:7%;font-weight:bold;text-align:center" >
-                        <i class="fa fa-trash-o" role="button" (click)="onclick(hashtag['hashtag'])" style="font-size:48px;color:red"></i>
+      <div class="col-sm-5" style="font-family:Arial;margin-top:7%;text-align:center;font-size:15px;font-weight:bold;" >
+        Users : {{hashtag['numUsers']}}
+      </div>
+      <div class="col-sm-7" style="font-family:Arial;margin-top:7%;text-align:center;font-size:15px;font-weight:bold;" >
+        Reach : {{hashtag['reach']}}
+      </div>
+      <div class="col-sm-7" style="font-family:Arial;margin-top:7%;font-size:15px;font-weight:bold;padding-top:4%" >
+        Sentimental Score : {{hashtag['sentiment']}}
+      </div>
+      <div class="col-sm-5" style="font-family:Arial;margin-top:7%;font-weight:bold;text-align:center" >
+        <i class="fa fa-trash-o" role="button" (click)="onclick(hashtag['hashtag'])" style="font-size:48px;color:red"></i>
 
       </div>
     </div>

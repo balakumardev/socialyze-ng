@@ -29,7 +29,7 @@
               <div class="card" role="button">
                 <div class="card-block p-0 clearfix">
                   <i class="fa fa-users bg-warning p-2 font-2xl mr-1 float-left"></i>
-                  <div class="h5 text-warning mb-0 pt-1">{{hashtag['sentiment']}}%</div>
+                  <div class="h5 text-warning mb-0 pt-1">{{ hashtag['sentiment'].toPrecision(4)  }}%</div>
                   <a class="font-weight-bold font-xs btn-block text-muted" ><div class="text-muted text-uppercase font-weight-bold font-xs">Sentimental Score</div></a>
                 </div>
               </div>
