@@ -12,7 +12,9 @@ export class DataService {
   getHashtags(id: number) {
     return this.http.get('http://app.socialyze.in:8080/hs/' + id);
   }
-
+  gettrackedhashtags(id:number){
+  return this.http.get('http://app.socialyze.in:8080/trackedhs/' + id);
+  }
   getCategories() {
     return this.http.get('http://app.socialyze.in:8080/hashtag/tweetcategories');
   }

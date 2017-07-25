@@ -27,7 +27,7 @@ export class MoreHashtagDetailsComponent implements OnInit {
   onclick(hashtag : string){
 	  this.data.removehashtag(hashtag).subscribe(
 		(response) => {
-    window.location.reload();
+    
 		}
 	  );
   }

@@ -15,7 +15,7 @@ export class HashtagDetailsComponent implements OnInit {
   constructor(private data: DataService) { }
 
   ngOnInit() {
-	   this.data.getHashtags(this.id).subscribe(
+	   this.data.gettrackedhashtags(this.id).subscribe(
             (response) => {
               this.hashtags = response.json();
 
