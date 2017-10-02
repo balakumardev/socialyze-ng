@@ -131,9 +131,9 @@
   <div class="sidebar">
     <nav class="sidebar-nav">
       <ul class="nav" *ngIf="loaded">
-        <li class="nav-title text-center">
+        <!--<li class="nav-title text-center">
           <span>Home</span>
-        </li>
+        </li>-->
 
         <li class="nav-item">
           <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
@@ -141,9 +141,9 @@
             <i style="font-size: 18px; vertical-align: bottom;" class="material-icons sidebar-icons md-36"> dashboard</i> Dashboard </a>
         </li>
 
-        <li class="nav-title text-center">
+    <!--    <li class="nav-title text-center">
           <span>Categories</span>
-        </li>
+        </li>-->
         <li class="nav-item" *ngFor="let cat of categories">
 
           <a class="nav-link" routerLinkActive="active" [routerLink]="['/dashboard']" [queryParams]=" {cat: cat['id']}"><span [ngSwitch]="cat['name']">
@@ -151,7 +151,7 @@
               <i style="font-size: 18px; vertical-align: bottom;" *ngSwitchCase="'Business'" class="material-icons sidebar-icons md-36 ">business</i>
               <i style="font-size: 18px; vertical-align: bottom;" *ngSwitchCase="'Entertainment'" class="material-icons sidebar-icons md-36 ">movie</i>
               <i style="font-size: 18px; vertical-align: bottom;" *ngSwitchCase="'Sports'" class="fa fa-soccer-ball-o sidebar-icons "></i>
-              <i style="font-size: 18px; vertical-align: bottom;" *ngSwitchCase="'Science'" class="fa fa-star sidebar-icons "></i>
+              <i style="font-size: 18px; vertical-align: bottom;" *ngSwitchCase="'Science'" class="material-icons sidebar-icons md-36 ">polymer</i>
               <i style="font-size: 18px; vertical-align: bottom;" *ngSwitchCase="'Technology'" class="material-icons sidebar-icons md-36 ">memory</i>
               <i style="font-size: 18px; vertical-align: bottom;" *ngSwitchCase="'Health'" class="material-icons sidebar-icons md-36 ">local_pharmacy</i>
               <i style="font-size: 18px; vertical-align: bottom;" *ngSwitchDefault class="fa sidebar-icons fa-arrow-circle-o-right"></i>
@@ -456,7 +456,7 @@
 </div>
 
 <footer class="app-footer">
-  &copy; 2017 Twitter Streams.<!--
+  &copy; 2017 Socialyze<!--
   <span class="float-right">
     Powered by <a href="https://genesisui.com">GenesisUI</a>
   </span>-->
