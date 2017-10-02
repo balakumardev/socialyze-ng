@@ -3,15 +3,15 @@
     <div class="col-lg-12">
       <div class="card">
         <div class="card-header">
-          <i><b>#{{hashtag['hashtag']}}</b></i>
+          <i><b style="font-size: 16px">#{{hashtag['hashtag']}}</b></i>
         </div>
         <div class="card-block">
-          <div class="row">
+          <div class="row" >
             <div class="col-sm-4">
               <div class="card" role="button" [routerLink]="['view-tweets']" [queryParams]="{hashtag: hashtag['hashtag'] }">
                 <div class="card-block p-0 clearfix">
-                  <i class="fa fa-twitter bg-primary p-2 font-2xl mr-1 float-left"></i>
-                  <div class="h5 text-primary mb-0 pt-1">{{hashtag['numTweets']}}</div>
+                  <i class="fa fa-twitter rounded-circle  p-1 font-4xl mr-1 float-left card-icon"></i>
+                  <div class="h5 mb-0 pt-1">{{hashtag['numTweets']}}</div>
                   <a class="font-weight-bold font-xs btn-block text-muted" ><div class="text-muted text-uppercase font-weight-bold font-xs">Tweets</div></a>
                 </div>
               </div>
@@ -19,8 +19,10 @@
             <div class="col-sm-4">
               <div class="card" role="button">
                 <div class="card-block p-0 clearfix">
-                  <i class="fa fa-users bg-inverse p-2 font-2xl mr-1 float-left"></i>
-                  <div class="h5 text-inverse mb-0 pt-1">{{hashtag['numUsers']}}</div>
+
+                  <i class="material-icons md-36 rounded-circle  p-1 font-4xl mr-1 float-left card-icon">people</i>
+                  <!--<i class="fa fa-users bg-inverse p-1 font-2xl mr-1 float-left"></i>-->
+                  <div class="h5 mb-0 pt-1">{{hashtag['numUsers']}}</div>
                   <a class="font-weight-bold font-xs btn-block text-muted" ><div class="text-muted text-uppercase font-weight-bold font-xs">Users</div></a>
                 </div>
               </div>
@@ -28,8 +30,10 @@
             <div class="col-sm-4">
               <div class="card" role="button">
                 <div class="card-block p-0 clearfix">
-                  <i class="fa fa-users bg-warning p-2 font-2xl mr-1 float-left"></i>
-                  <div class="h5 text-warning mb-0 pt-1">{{ hashtag['sentiment'].toPrecision(4)  }}%</div>
+
+                  <i class="material-icons md-36  rounded-circle  p-1 font-4xl mr-1 float-left card-icon">assessment</i>
+                  <!--<i class="fa fa-users bg-warning p-1 font-2xl mr-1 float-left"></i>-->
+                  <div class="h5 mb-0 pt-1">{{ hashtag['sentiment'].toPrecision(4)  }}%</div>
                   <a class="font-weight-bold font-xs btn-block text-muted" ><div class="text-muted text-uppercase font-weight-bold font-xs">Sentimental Score</div></a>
                 </div>
               </div>
@@ -40,8 +44,8 @@
             <div class="col-sm-4">
               <div class="card">
                 <div class="card-block p-0 clearfix">
-                  <i class="fa fa-twitter-square bg-primary p-2 font-2xl mr-1 float-left"></i>
-                  <div class="h5 text-primary mb-0 pt-1">{{hashtag['retweets']}}</div>
+                  <i class="fa fa-twitter-square rounded-circle p-1 font-4xl mr-1 float-left card-icon"></i>
+                  <div class="h5 mb-0 pt-1">{{hashtag['retweets']}}</div>
                   <div class="text-muted text-uppercase font-weight-bold font-xs">Retweets</div>
                 </div>
               </div>
@@ -49,8 +53,10 @@
             <div class="col-sm-4">
               <div class="card" role="button" [routerLink]="['tweet-retweet-chart']" [queryParams]="{tweets : hashtag['numTweets'],retweets: hashtag['retweets']}">
                 <div class="card-block p-0 clearfix">
-                  <i class="fa fa-thumbs-up bg-success p-2 font-2xl mr-1 float-left"></i>
-                  <div class="h5 text-success mb-0 pt-1">109,50</div>
+
+                  <i class="material-icons md-36 rounded-circle p-1 font-4xl mr-1 float-left card-icon">thumb_up</i>
+                  <!--<i class="fa fa-thumbs-up bg-success p-1 font-5xl mr-1 float-left"></i>-->
+                  <div class="h5 mb-0 pt-1">109,50</div>
                   <a class="font-weight-bold font-xs btn-block text-muted" ><div class="text-muted text-uppercase font-weight-bold font-xs">Likes</div></a>
                 </div>
               </div>
@@ -58,8 +64,9 @@
             <div class="col-sm-4">
               <div class="card">
                 <div class="card-block p-0 clearfix">
-                  <i class="fa fa-globe bg-danger p-2 font-2xl mr-1 float-left"></i>
-                  <div class="h5 text-danger mb-0 pt-1">{{hashtag['reach']}}</div>
+                  <i class="material-icons md-36  rounded-circle p-1 font-4xl mr-1 float-left card-icon">language</i>
+                  <!--<i class="fa fa-globe bg-danger p-1 font-2xl mr-1 float-left"></i>-->
+                  <div class="h5 mb-0 pt-1">{{hashtag['reach']}}</div>
                   <div class="text-muted text-uppercase font-weight-bold font-xs">Reach</div>
                 </div>
               </div>

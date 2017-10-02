@@ -1,3 +1,4 @@
+
 <header class="app-header navbar">
   <button class="navbar-toggler mobile-sidebar-toggler hidden-lg-up" type="button">&#9776;</button>
   <a class="navbar-brand" href="#"></a>
@@ -136,15 +137,25 @@
 
         <li class="nav-item">
           <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
-             [routerLink]="['/dashboard']"><i class="fa fa-home"></i> Dashboard </a>
+             [routerLink]="['/dashboard']">
+            <i style="font-size: 18px; vertical-align: bottom;" class="material-icons sidebar-icons md-36"> dashboard</i> Dashboard </a>
         </li>
 
         <li class="nav-title text-center">
           <span>Categories</span>
         </li>
         <li class="nav-item" *ngFor="let cat of categories">
-          <a class="nav-link" routerLinkActive="active" [routerLink]="['/dashboard']" [queryParams]=" {cat: cat['id']}"><i
-            class="fa fa-arrow-circle-o-right"></i> {{cat['name']}}</a>
+
+          <a class="nav-link" routerLinkActive="active" [routerLink]="['/dashboard']" [queryParams]=" {cat: cat['id']}"><span [ngSwitch]="cat['name']">
+              <i style="font-size: 18px; vertical-align: bottom;" *ngSwitchCase="'Top Trends'" class="material-icons sidebar-icons md-36 ">trending_up</i>
+              <i style="font-size: 18px; vertical-align: bottom;" *ngSwitchCase="'Business'" class="material-icons sidebar-icons md-36 ">business</i>
+              <i style="font-size: 18px; vertical-align: bottom;" *ngSwitchCase="'Entertainment'" class="material-icons sidebar-icons md-36 ">movie</i>
+              <i style="font-size: 18px; vertical-align: bottom;" *ngSwitchCase="'Sports'" class="fa fa-soccer-ball-o sidebar-icons "></i>
+              <i style="font-size: 18px; vertical-align: bottom;" *ngSwitchCase="'Science'" class="fa fa-star sidebar-icons "></i>
+              <i style="font-size: 18px; vertical-align: bottom;" *ngSwitchCase="'Technology'" class="material-icons sidebar-icons md-36 ">memory</i>
+              <i style="font-size: 18px; vertical-align: bottom;" *ngSwitchCase="'Health'" class="material-icons sidebar-icons md-36 ">local_pharmacy</i>
+              <i style="font-size: 18px; vertical-align: bottom;" *ngSwitchDefault class="fa sidebar-icons fa-arrow-circle-o-right"></i>
+            </span>{{cat['name']}}</a>
         </li>
 
       </ul>
