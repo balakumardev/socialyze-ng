@@ -51,7 +51,7 @@
               </div>
             </div><!--/.col-->
             <div class="col-sm-4">
-              <div class="card" role="button" [routerLink]="['tweet-retweet-chart']" [queryParams]="{tweets : hashtag['numTweets'],retweets: hashtag['retweets']}">
+              <div class="card" role="button" [routerLink]="['tweet-retweet-chart']" [queryParams]="{tweets : hashtag['numTweets'],retweets: hashtag['retweets'],hash: hashtag['hashtag']}">
                 <div class="card-block p-0 clearfix">
 
                   <i class="material-icons md-36 rounded-circle p-1 font-4xl mr-1 float-left card-icon">thumb_up</i>
