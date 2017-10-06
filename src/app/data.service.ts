@@ -11,43 +11,45 @@ export class DataService {
   }
 
   getHashtags(id: number) {
-    return this.http.get('http://app.socialyze.in:8088/hs/' + id);
+    return this.http.get('http://localhost:8080/hs/' + id);
   }
 
   gettrackedhashtags(id: number) {
-    return this.http.get('http://app.socialyze.in:8088/trackedhs/' + id);
+    return this.http.get('http://localhost:8080/trackedhs/' + id);
   }
 
   getCategories() {
-    return this.http.get('http://app.socialyze.in:8088/hashtag/tweetcategories');
+    return this.http.get('http://localhost:8080/hashtag/tweetcategories');
   }
 
   getTweets(hashtag: string, num: number) {
-    return this.http.get('http://app.socialyze.in:8088/hs/' + hashtag + '/' + num);
+    return this.http.get('http://localhost:8080/hs/' + hashtag + '/' + num);
   }
 
   getNumTweetsByUser(id: string, hashtag: string) {
-    return this.http.get('http://app.socialyze.in:8088/hashtag/' + hashtag + '/' + id);
+    return this.http.get('http://localhost:8080/hashtag/' + hashtag + '/' + id);
   }
 
   gettrackedhashtagstatus(hashtag: string) {
-    return this.http.get('http://app.socialyze.in:8088/tracked_hashtag_status/' + hashtag);
+    return this.http.get('http://localhost:8080/tracked_hashtag_status/' + hashtag);
   }
 
   putHashtag(id: number, hashtag: string) {
-    return this.http.get('http://app.socialyze.in:8080/hashtags/' + hashtag + '?category=' + id);
+    return this.http.get('http://localhost:8080/hashtags/' + hashtag + '?category=' + id);
   }
 
   removehashtag(hashtag: string) {
-    return this.http.get('http://app.socialyze.in:8088/removehashtag/' + hashtag);
+    return this.http.get('http://localhost:8080/removehashtag/' + hashtag);
   }
 
   updatestatus(name: string) {
-    return this.http.put('http://app.socialyze.in:8088/updatestatus/' + name, name);
+    return this.http.put('http://localhost:8080/updatestatus/' + name, name);
   }
 
   getstatus(name: string) {
-    return this.http.get('http://app.socialyze.in:8088/getstatus/' + name);
+    return this.http.get('http://localhost:8080/getstatus/' + name);
   }
-
+  getSentimentScore(name: string){
+    return this.http.get('http://localhost:8080/sentimentValues/'+ name);
+  }
 }
