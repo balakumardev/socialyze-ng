@@ -11,6 +11,9 @@ export class TweetRetweetChartComponent implements OnInit, AfterContentInit {
   retweets : object;
   hashtag : any;
   resp  : any;
+  private positive : any = 0;
+  private negative : any = 0;
+  private neutral : any = 0;
   loaded: boolean = false;
   constructor(private thisroute: ActivatedRoute,private data: DataService) { }
 
@@ -21,14 +24,18 @@ export class TweetRetweetChartComponent implements OnInit, AfterContentInit {
     this.data.getSentimentScore(this.hashtag).subscribe(
       (response) => {
            this.resp = response.json();
+           this.positive = this.resp['positive'];
+           this.negative = this.resp['negative'];
+           this.neutral = this.resp['neutral'];
       });
+
   }
   // Pie
   public pieChartLabels: string[] = ['Positive', 'Negative','Neutral'];
   public pieChartData: number[];
   public pieChartType: string = 'pie';
 	public barChartOptions: any = {
-    scaleShowVerticalLines: false,
+    scaleShowVerticalLines: true,
     responsive: true
   };
   public barChartLabels: string[] = ['Types of tweets'];
@@ -36,16 +43,13 @@ export class TweetRetweetChartComponent implements OnInit, AfterContentInit {
   public barChartLegend: boolean = true;
 
   public barChartData: any[];
-  public doughnutChartLabels: string[] = ['tweets','retweets'];
+  public doughnutChartLabels: string[] = ['positive','negative','neutral'];
   public doughnutChartData: number[];
   public doughnutChartType: string = 'doughnut';
   ngAfterContentInit() {
-    this.pieChartData = [+this.resp['positive'], +this.resp['negative'],+this.resp['neutral']];
-	 this.doughnutChartData = [+this.tweets, +this.retweets];
-	this.barChartData = [
-    {data: [+this.tweets], label: 'tweets'},
-    {data: [+this.retweets], label: 'retweets'}
-  ];
+
+
+	
     console.log(this.pieChartData);
     this.loaded = true;
   }

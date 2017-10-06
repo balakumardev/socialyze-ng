@@ -6,7 +6,7 @@
 		  <div class="card-block">
 			<div class="chart-wrapper">
 			  <canvas baseChart class="chart"
-			  [data]="pieChartData"		
+			  [data]="[+positive,+negative,+neutral]"
 			  [labels]="pieChartLabels"
 			  [chartType]="pieChartType"
 			  (chartHover)="chartHovered($event)"
@@ -26,7 +26,11 @@
 		  <div class="card-block">
 			<div class="chart-wrapper">
 			  <canvas baseChart class="chart"
-			  [datasets]="barChartData"
+			  [datasets]="[
+			    {data: [+positive], label: 'positive'},
+			    {data: [+negative], label: 'negative'},
+					{data: [+neutral], label: 'neutral'}
+			  ]"
 			  [labels]="barChartLabels"
 			  [options]="barChartOptions"
 			  [legend]="barChartLegend"
@@ -48,7 +52,7 @@
       <div class="card-block">
         <div class="chart-wrapper">
           <canvas baseChart class="chart"
-          [data]="doughnutChartData"
+          [data]="[+positive,+negative,+neutral]"
           [labels]="doughnutChartLabels"
           [chartType]="doughnutChartType"
           (chartHover)="chartHovered($event)"
