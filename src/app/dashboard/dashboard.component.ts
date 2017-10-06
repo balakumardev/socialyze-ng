@@ -14,9 +14,10 @@ export class DashboardComponent implements OnInit {
 
   constructor(private router: Router, private thisRoute: ActivatedRoute, private data: DataService) {
   }
+
 	@ViewChild('onoroff') checked : ElementRef;
+
   ngOnInit(): void {
-	
     this.thisRoute.queryParams.subscribe(
       (params: Params) => {
         this.loaded = false;

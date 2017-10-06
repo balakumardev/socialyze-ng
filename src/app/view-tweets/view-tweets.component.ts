@@ -5,7 +5,7 @@ import {DataService} from "../data.service";
 @Component({
   selector: 'app-view-tweets',
   templateUrl: './view-tweets.component.html',
-  styleUrls: ['./view-tweets.component.scss']
+  styleUrls: ['./view-tweets.component.css']
 })
 export class ViewTweetsComponent implements OnInit {
   tweets: Object;

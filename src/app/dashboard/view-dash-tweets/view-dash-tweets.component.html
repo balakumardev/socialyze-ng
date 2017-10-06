@@ -1,0 +1,19 @@
+<table class="table table-hover table-outline table-condensed mb-0 hidden-sm-down container borderless" style="border: none;">
+  <tbody>
+  <tr class="row" *ngFor="let tweet of tweets">
+    <td class="text-center col-sm-1">
+      <div class="avatar">
+        <img [src]="tweet.tweet.tweetJSON.user.profile_image_url" class="img-avatar">
+        <span class="avatar-status badge-success"></span>
+      </div>
+    </td>
+
+    <td class="col-sm-9">
+      <div>   {{tweet.tweet.tweetJSON.text}} </div>
+    </td>
+    <td class="col-sm-2">
+      <small>{{ timeDifference(tweet.tweet.tweetJSON.created_at) }}</small>
+    </td>
+  </tr>
+  </tbody>
+</table>
