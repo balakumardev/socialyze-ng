@@ -4,6 +4,7 @@ import {Routes, RouterModule} from '@angular/router';
 import {DashboardComponent} from './dashboard.component';
 import {ViewTweetsComponent} from "../view-tweets/view-tweets.component";
 import {TweetRetweetChartComponent} from "./tweet-retweet-chart/tweet-retweet-chart.component";
+import {ChartsComponent} from "./charts/charts.component";
 const routes: Routes = [
   {
     path: '',
@@ -27,6 +28,13 @@ const routes: Routes = [
         component: TweetRetweetChartComponent,
         data: {
           title: 'Charts for Tweets & Retweets'
+        }
+      },
+      {
+        path: 'charts',
+        component: ChartsComponent,
+        data: {
+          title: 'Charts'
         }
       }
     ]

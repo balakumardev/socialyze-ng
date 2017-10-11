@@ -66,15 +66,15 @@
             </div>
             <div class="row">
               <div class="col-sm-6">
-                <div class="card" role="button" [routerLink]="['tweet-retweet-chart']"
-                     [queryParams]="{tweets : hashtag['numTweets'],retweets: hashtag['retweets']}">
+                <div class="card" role="button" [routerLink]="['charts']"
+                     [queryParams]="{hash: hashtag['hashtag']}">
                   <div class="card-block p-0 clearfix">
 
-                    <i class="material-icons md-36 rounded-circle p-1 font-4xl mr-1 float-left card-icon">thumb_up</i>
+                    <i class="material-icons md-36 rounded-circle p-1 font-2x2 mr-1 float-left card-icon">pie_chart</i>
                     <!--<i class="fa fa-thumbs-up bg-success p-1 font-5xl mr-1 float-left"></i>-->
-                    <div class="h5 mb-0 pt-1">109,50</div>
+                    <div class="h5 mb-0 pt-1">Charts</div>
                     <a class="font-weight-bold font-xs btn-block text-muted">
-                      <div class="text-muted text-uppercase font-weight-bold font-xs">Likes</div>
+                      <div class="text-muted text-uppercase font-weight-bold font-xs"></div>
                     </a>
                   </div>
                 </div>

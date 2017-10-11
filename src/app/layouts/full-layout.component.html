@@ -493,6 +493,11 @@
             <th>Email</th>
             <td>{{auth.getUserInfo()['email']}}</td>
           </tr>
+          <tr>
+            <th>Location</th>
+            <td *ngIf="location != undefined; else noSupport">{{location.name}}, {{location.adminName1}}, {{location.countryName}}</td>
+            <ng-template #noSupport> <td> Your browser doesn't support GeoLocation</td></ng-template>
+          </tr>
           </tbody>
         </table>
 

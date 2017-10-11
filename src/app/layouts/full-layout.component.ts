@@ -10,6 +10,9 @@ export class FullLayoutComponent implements OnInit, DoCheck {
   categories: Object[];
   loaded: boolean = false;
   authenticated: boolean = false;
+  lat: number;
+  long: number;
+  location: object;
   constructor(private data: DataService, public auth: AuthService, private change: NgZone) { }
 
   ngDoCheck() {
@@ -25,7 +28,21 @@ export class FullLayoutComponent implements OnInit, DoCheck {
         this.loaded = true;
       }
     );
+
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position: any)=> {
+        this.lat = +position.coords.latitude;
+        this.long = +position.coords.longitude;
+        this.data.getLocation(this.lat, this.long).subscribe(
+          (response: any) => {
+              this.location = response.json()['geonames'][0];
+
+          }
+        )
+      });
+    }
   }
+
 
   login() {
     this.auth.login();

@@ -14,6 +14,7 @@ import {TweetRetweetChartComponent} from './tweet-retweet-chart/tweet-retweet-ch
 import {ModalsComponent} from "../components/modals.component";
 import {ModalModule} from "ng2-bootstrap";
 import { ViewDashTweetsComponent } from './view-dash-tweets/view-dash-tweets.component';
+import { ChartsComponent } from './charts/charts.component';
 
 
 
@@ -28,7 +29,7 @@ import { ViewDashTweetsComponent } from './view-dash-tweets/view-dash-tweets.com
     FormsModule,
     ModalModule
   ],
-  declarations: [DashboardComponent, LoadingSpinnerComponent, ViewTweetsComponent, TweetRetweetChartComponent, ViewDashTweetsComponent]
+  declarations: [DashboardComponent, LoadingSpinnerComponent, ViewTweetsComponent, TweetRetweetChartComponent, ViewDashTweetsComponent, ChartsComponent]
 })
 export class DashboardModule {
 }

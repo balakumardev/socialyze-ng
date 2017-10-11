@@ -28,12 +28,13 @@ export class TweetRetweetChartComponent implements OnInit, AfterContentInit {
            this.negative = this.resp['negative'];
            this.neutral = this.resp['neutral'];
       });
-
   }
   // Pie
   public pieChartLabels: string[] = ['Positive', 'Negative','Neutral'];
   public pieChartData: number[];
   public pieChartType: string = 'pie';
+
+
 	public barChartOptions: any = {
     scaleShowVerticalLines: true,
     responsive: true
@@ -46,10 +47,8 @@ export class TweetRetweetChartComponent implements OnInit, AfterContentInit {
   public doughnutChartLabels: string[] = ['positive','negative','neutral'];
   public doughnutChartData: number[];
   public doughnutChartType: string = 'doughnut';
+
   ngAfterContentInit() {
-
-
-	
     console.log(this.pieChartData);
     this.loaded = true;
   }
