@@ -13,10 +13,18 @@
         color: $navbar-color;
       }
     }
-    .form-control::-webkit-input-placeholder { color: $navbar-color; }
-    .form-control:-moz-placeholder { color: $navbar-color; }
-    .form-control::-moz-placeholder { color: $navbar-color; }
-    .form-control:-ms-input-placeholder { color: $navbar-color; }
+    .form-control::-webkit-input-placeholder {
+      color: $navbar-color;
+    }
+    .form-control:-moz-placeholder {
+      color: $navbar-color;
+    }
+    .form-control::-moz-placeholder {
+      color: $navbar-color;
+    }
+    .form-control:-ms-input-placeholder {
+      color: $navbar-color;
+    }
   }
   .nav-item {
 
@@ -92,4 +100,323 @@
       }
     }
   }
+}
+
+.sidebar {
+  padding: 0;
+  color: #fff;
+  background: transparent;
+}
+
+.sidebar .sidebar-close {
+  position: absolute;
+  right: 0;
+  display: none;
+  padding: 0 1rem;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 60px;
+  color: #fff;
+  background: 0;
+  border: 0;
+  opacity: .8;
+}
+
+.sidebar .sidebar-close:hover {
+  opacity: 1;
+}
+
+.sidebar .sidebar-nav {
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  width: 250px;
+}
+
+.sidebar .sidebar-nav::-webkit-scrollbar {
+  width: 10px;
+  margin-left: -10px;
+  -webkit-appearance: none;
+}
+
+.sidebar .sidebar-nav::-webkit-scrollbar-track {
+  background-color: #444d50;
+  border-right: 1px solid #2c3334;
+  border-left: 1px solid #2c3334;
+}
+
+.sidebar .sidebar-nav::-webkit-scrollbar-thumb {
+  height: 50px;
+  background-color: #212526;
+  background-clip: content-box;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 1px 2px;
+}
+
+.sidebar ul.nav {
+  width: 250px;
+  flex-direction: column !important;
+}
+
+.sidebar ul.nav li.nav-title {
+  padding: 0.95rem 1rem;
+  font-size: 11px;
+  font-weight: 600;
+  color: #c0cadd;
+  text-transform: uppercase;
+}
+
+.sidebar ul.nav li.divider {
+  height: 10px;
+}
+
+.sidebar ul.nav li.nav-item {
+  position: relative;
+  margin: 0;
+  transition: background .3s ease-in-out;
+}
+
+.sidebar ul.nav li.nav-item ul {
+  max-height: 0;
+  padding: 0;
+  margin: 0;
+  overflow-y: hidden;
+  transition: max-height .3s ease-in-out;
+}
+
+.sidebar ul.nav li.nav-item ul li {
+  padding: 0;
+  list-style: none;
+}
+
+.sidebar ul.nav li.nav-item a.nav-link {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: #384868;
+  text-decoration: none;
+  background: transparent;
+}
+
+.sidebar ul.nav li.nav-item a.nav-link:hover {
+  color: #384868 !important;
+  background: #f9f9fa !important;
+}
+
+.sidebar ul.nav li.nav-item a.nav-link:hover i {
+  color: #384868 !important;
+}
+
+.sidebar ul.nav li.nav-item a.nav-link.active {
+  color: #384868;
+  font-weight: bold;
+  background: #f9f9fa;
+}
+
+.sidebar ul.nav li.nav-item a.nav-link.active i {
+  color: #20a8d8;
+}
+
+.sidebar ul.nav li.nav-item a.nav-link [class^="icon-"], .sidebar ul.nav li.nav-item a.nav-link [class*=" icon-"] {
+  display: inline-block;
+  margin-top: -4px;
+  vertical-align: middle;
+}
+
+.sidebar ul.nav li.nav-item a.nav-link i {
+  width: 20px;
+  margin: 0 0.5rem 0 0;
+  font-size: 14px;
+  color: #c0cadd;
+  text-align: center;
+}
+
+.sidebar ul.nav li.nav-item a.nav-link .badge {
+  float: right;
+  margin-top: 2px;
+}
+
+.sidebar ul.nav li.nav-item a.nav-link.nav-dropdown-toggle::before {
+  position: absolute;
+  top: 0.96875rem;
+  right: 1rem;
+  display: block;
+  width: 0.875rem;
+  height: 0.875rem;
+  padding: 0;
+  font-size: 0.875rem;
+  line-height: 0.65625rem;
+  text-align: center;
+  content: "\2039";
+  transition: .3s;
+}
+
+.sidebar ul.nav li.nav-item.nav-dropdown.open {
+  background: #31383a;
+}
+
+.sidebar ul.nav li.nav-item.nav-dropdown.open > ul, .sidebar ul.nav li.nav-item.nav-dropdown.open > ol {
+  max-height: 1000px;
+}
+
+.sidebar ul.nav li.nav-item.nav-dropdown.open a.nav-link {
+  color: #fff;
+  border-left: 0 !important;
+}
+
+.sidebar ul.nav li.nav-item.nav-dropdown.open > a.nav-link.nav-dropdown-toggle::before {
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+.sidebar ul.nav li.nav-item.nav-dropdown.open .nav-dropdown.open {
+  border-left: 0;
+}
+
+.sidebar ul.nav li.nav-item.nav-dropdown.nt {
+  transition: 0s !important;
+}
+
+.sidebar ul.nav li.nav-item.nav-dropdown.nt > ul, .sidebar ul.nav li.nav-item.nav-dropdown.nt > ol {
+  transition: 0s !important;
+}
+
+.sidebar ul.nav li.nav-item.nav-dropdown.nt a.nav-link.nav-dropdown-toggle::before {
+  transition: 0s !important;
+}
+
+.sidebar ul.nav li.nav-item a.nav-label {
+  display: block;
+  padding: 0.09375rem 1rem;
+  color: #c0cadd;
+}
+
+.sidebar ul.nav li.nav-item a.nav-label:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.sidebar ul.nav li.nav-item a.nav-label i {
+  width: 20px;
+  margin: -3px 0.5rem 0 0;
+  font-size: 10px;
+  color: #c0cadd;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.sidebar ul.nav li.nav-item .progress {
+  background-color: #5b686b !important;
+}
+
+@media (min-width: 576px) {
+  body.sidebar-compact .hidden-cn {
+    display: none;
+  }
+  body.sidebar-compact .sidebar {
+    z-index: 999;
+    width: 50px;
+  }
+  body.sidebar-compact .sidebar .sidebar-nav {
+    overflow: visible;
+  }
+  body.sidebar-compact .sidebar ul.nav li.nav-title, body.sidebar-compact .sidebar ul.nav li.divider {
+    display: none;
+  }
+  body.sidebar-compact .sidebar ul.nav li.nav-item {
+    width: 50px;
+    overflow: hidden;
+    border-left: 0 !important;
+  }
+  body.sidebar-compact .sidebar ul.nav li.nav-item ul {
+    background: #384042;
+  }
+  body.sidebar-compact .sidebar ul.nav li.nav-item a.nav-link {
+    position: relative;
+    padding: 0 15px 0 0;
+    margin: 0;
+    line-height: 50px;
+    white-space: nowrap;
+    border-left: 0 !important;
+  }
+  body.sidebar-compact .sidebar ul.nav li.nav-item a.nav-link.nav-dropdown-toggle::before {
+    display: none;
+  }
+  body.sidebar-compact .sidebar ul.nav li.nav-item a.nav-link i {
+    display: block;
+    float: left;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    margin: 0 !important;
+    font-size: 18px;
+    line-height: 50px;
+  }
+  body.sidebar-compact .sidebar ul.nav li.nav-item a.nav-link .badge {
+    position: absolute;
+    top: 14px;
+    right: 15px;
+    display: none;
+  }
+  body.sidebar-compact .sidebar ul.nav li.nav-item a.nav-link:hover {
+    width: 250px;
+  }
+  body.sidebar-compact .sidebar ul.nav li.nav-item a.nav-link:hover .badge {
+    display: inline;
+  }
+  body.sidebar-compact .sidebar ul.nav li.nav-item ul {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+  }
+  body.sidebar-compact .sidebar ul.nav li.nav-item ul li {
+    position: relative;
+    padding: 0;
+  }
+  body.sidebar-compact .sidebar ul.nav li.nav-item ul li a.nav-link {
+    width: 200px;
+  }
+  body.sidebar-compact .sidebar ul.nav li.nav-item ul li ul, body.sidebar-compact .sidebar ul.nav li.nav-item ul li ol {
+    position: absolute;
+    top: 0;
+    left: 100%;
+  }
+  body.sidebar-compact .sidebar ul.nav li.nav-item.nav-dropdown.open {
+    background: #2c3334;
+  }
+  body.sidebar-compact .sidebar ul.nav li.nav-item.nav-dropdown.open > a.nav-link i {
+    color: #20a8d8;
+  }
+  body.sidebar-compact .sidebar ul.nav li.nav-item.nav-dropdown.open > ul, body.sidebar-compact .sidebar ul.nav li.nav-item.nav-dropdown.open > ol {
+    display: none;
+  }
+  body.sidebar-compact .sidebar ul.nav li.nav-item:hover {
+    width: 300px;
+    overflow: visible;
+    background: #2c3334;
+    transition: 0s;
+  }
+  body.sidebar-compact .sidebar ul.nav li.nav-item:hover > a.nav-link {
+    width: 300px;
+  }
+  body.sidebar-compact .sidebar ul.nav li.nav-item:hover > ul, body.sidebar-compact .sidebar ul.nav li.nav-item:hover > ol {
+    display: inline;
+    max-height: 10000px;
+    transition: 0s;
+  }
+  body.sidebar-compact .sidebar ul.nav li.nav-item:hover > ul li, body.sidebar-compact .sidebar ul.nav li.nav-item:hover > ol li {
+    width: 250px;
+  }
+  body.sidebar-compact .sidebar ul.nav li.nav-item:hover > ul li a.nav-link, body.sidebar-compact .sidebar ul.nav li.nav-item:hover > ol li a.nav-link {
+    width: 250px;
+  }
+  body.sidebar-compact .sidebar ul.nav li.nav-item:hover.nav-dropdown.open > ul, body.sidebar-compact .sidebar ul.nav li.nav-item:hover.nav-dropdown.open > ol {
+    display: inline;
+  }
+}
+.sidebar .sidebar-nav::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-right: none;
+  border-left: none;
 }

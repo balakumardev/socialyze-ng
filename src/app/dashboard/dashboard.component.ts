@@ -16,7 +16,9 @@ export class DashboardComponent implements OnInit {
   }
 
 	@ViewChild('onoroff') checked : ElementRef;
-
+  changeImage(event : any) {
+    (<HTMLImageElement>event.target).src = '../../assets/img/refresh_hover.svg';
+  }
   ngOnInit(): void {
     this.thisRoute.queryParams.subscribe(
       (params: Params) => {
@@ -67,4 +69,6 @@ export class DashboardComponent implements OnInit {
       }
     );
   }
+
+
 }

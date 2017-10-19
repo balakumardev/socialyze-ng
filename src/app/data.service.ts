@@ -35,15 +35,15 @@ export class DataService {
   }
 
   putHashtag(id: number, hashtag: string) {
-    return this.http.get('http://app.socialyze.in:8080/hashtags/' + hashtag + '?category=' + id);
+    return this.http.get('http://app.socialyze.in:8088/hashtags/' + hashtag + '?category=' + id);
   }
 
   removehashtag(hashtag: string) {
-    return this.http.get('http://app.socialyze.in:8080/removehashtag/' + hashtag);
+    return this.http.delete('http://app.socialyze.in:8088/hashtags' + hashtag);
   }
 
   updatestatus(name: string) {
-    return this.http.put('http://app.socialyze.in:8080/updatestatus/' + name, name);
+    return this.http.put('http://app.socialyze.in:8088/hashtags/' + name, name);
   }
 
   getstatus(name: string) {
