@@ -10,11 +10,11 @@
           <div class="row">
           <div class="col-sm-6">
             <div class="row">
-              <div class="col-sm-6">
+              <div class="col-md-6">
                 <div class="card" role="button" [routerLink]="['view-tweets']"
                      [queryParams]="{hashtag: hashtag['hashtag'] }">
                   <div class="card-block p-0 clearfix">
-                    <i class="fa fa-twitter rounded-circle  p-1 font-4xl mr-1 float-left card-icon"></i>
+                    <i class="fa fa-twitter rounded-circle p-1 font-4xl mr-0 float-left card-icon"></i>
                     <div class="h5 mb-0 pt-1">{{hashtag['numTweets']}}</div>
                     <a class="font-weight-bold font-xs btn-block text-muted">
                       <div class="text-muted text-uppercase font-weight-bold font-xs">Tweets</div>
@@ -22,11 +22,11 @@
                   </div>
                 </div>
               </div><!--/.col-->
-              <div class="col-sm-6">
+              <div class="col-md-6">
                 <div class="card" role="button">
                   <div class="card-block p-0 clearfix">
 
-                    <i class="material-icons md-36 rounded-circle  p-1 font-4xl mr-1 float-left card-icon">people</i>
+                    <i class="material-icons md-36 rounded-circle  p-1 font-4xl mr-0 float-left card-icon">people</i>
                     <!--<i class="fa fa-users bg-inverse p-1 font-2xl mr-1 float-left"></i>-->
                     <div class="h5 mb-0 pt-1">{{hashtag['numUsers']}}</div>
                     <a class="font-weight-bold font-xs btn-block text-muted">
@@ -36,7 +36,6 @@
                 </div>
               </div><!--/.col-->
 
-
             </div>
 
             <div class="row">
@@ -45,7 +44,7 @@
                   <div class="card-block p-0 clearfix">
 
                     <i
-                      class="material-icons md-36  rounded-circle  p-1 font-4xl mr-1 float-left card-icon">assessment</i>
+                      class="material-icons md-36  rounded-circle  p-1 font-4xl mr-0 float-left card-icon">assessment</i>
                     <!--<i class="fa fa-users bg-warning p-1 font-2xl mr-1 float-left"></i>-->
                     <div class="h5 mb-0 pt-1">{{ hashtag['sentiment'].toPrecision(4) }}%</div>
                     <a class="font-weight-bold font-xs btn-block text-muted">
@@ -57,7 +56,7 @@
               <div class="col-sm-6">
                 <div class="card">
                   <div class="card-block p-0 clearfix">
-                    <i class="fa fa-twitter-square rounded-circle p-1 font-4xl mr-1 float-left card-icon"></i>
+                    <i class="fa fa-twitter-square rounded-circle p-1 font-4xl mr-0 float-left card-icon"></i>
                     <div class="h5 mb-0 pt-1">{{hashtag['retweets']}}</div>
                     <div class="text-muted text-uppercase font-weight-bold font-xs">Retweets</div>
                   </div>
@@ -71,7 +70,7 @@
                      [queryParams]="{hash: hashtag['hashtag']}">
                   <div class="card-block p-0 clearfix">
 
-                    <i class="material-icons md-36 rounded-circle p-1 font-2x2 mr-1 float-left card-icon">pie_chart</i>
+                    <i class="material-icons md-36 rounded-circle p-1 font-2x2 mr-0 float-left card-icon">pie_chart</i>
                     <!--<i class="fa fa-thumbs-up bg-success p-1 font-5xl mr-1 float-left"></i>-->
                     <div class="h5 mb-0 pt-1">Charts</div>
                     <a class="font-weight-bold font-xs btn-block text-muted">
@@ -83,7 +82,7 @@
               <div class="col-sm-6">
                 <div class="card">
                   <div class="card-block p-0 clearfix">
-                    <i class="material-icons md-36  rounded-circle p-1 font-4xl mr-1 float-left card-icon">language</i>
+                    <i class="material-icons md-36  rounded-circle p-1 font-4xl mr-0 float-left card-icon">language</i>
                     <!--<i class="fa fa-globe bg-danger p-1 font-2xl mr-1 float-left"></i>-->
                     <div class="h5 mb-0 pt-1">{{hashtag['reach']}}</div>
                     <div class="text-muted text-uppercase font-weight-bold font-xs">Reach</div>

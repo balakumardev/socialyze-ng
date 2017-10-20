@@ -20,6 +20,7 @@ export class DashboardComponent implements OnInit {
     (<HTMLImageElement>event.target).src = '../../assets/img/refresh_hover.svg';
   }
   ngOnInit(): void {
+
     this.thisRoute.queryParams.subscribe(
       (params: Params) => {
         this.loaded = false;
