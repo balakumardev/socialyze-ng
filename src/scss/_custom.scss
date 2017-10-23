@@ -370,6 +370,9 @@
     top: 50px;
     left: 50px;
   }
+  .aside-menu-fixed .main, .aside-menu-fixed .app-footer {
+    margin-right: 0px;
+}
   body.sidebar-compact .sidebar ul.nav li.nav-item ul li {
     position: relative;
     padding: 0;
