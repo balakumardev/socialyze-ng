@@ -9,6 +9,7 @@ import {DataService} from "../data.service";
 export class DashboardComponent implements OnInit {
   categories: any;
   hashtags: any[] = [];
+  handles : any[] = [];
   nohashtags: boolean = false;
   loaded: boolean = false;
 
@@ -62,6 +63,7 @@ export class DashboardComponent implements OnInit {
               }
             }
           );
+          
         }
 
         if (this.hashtags == null || this.hashtags.length == 0) {

@@ -56,7 +56,11 @@ export class DataService {
 
   getLocation(lat: number, long: number) {
     return this.http.get('http://api.geonames.org/findNearbyPlaceNameJSON?lat=' + lat + '&lng=' + long +
-      '&username=balakumarrulez')
+      '&username=balakumarrulez');
+  }
+
+  getHandles(id: number){
+    return this.http.get('http://app.socialyze.in:8088/handles/'+ id);
   }
   
 }
