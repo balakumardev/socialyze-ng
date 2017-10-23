@@ -146,7 +146,8 @@
         </li>-->
         <li class="nav-item" *ngFor="let cat of categories">
 
-          <a class="nav-link" routerLinkActive="active" [routerLink]="['/dashboard']" [queryParams]=" {cat: cat['id']}"><span [ngSwitch]="cat['name']">
+          <a class="nav-link" routerLinkActive="active" [routerLink]="['/dashboard']" [queryParams]=" {cat: cat['id']}">
+            <span [ngSwitch]="cat['name']">
               <i style="font-size: 18px; vertical-align: bottom;" *ngSwitchCase="'Top Trends'" class="material-icons sidebar-icons md-36 ">trending_up</i>
               <i style="font-size: 18px; vertical-align: bottom;" *ngSwitchCase="'Business'" class="material-icons sidebar-icons md-36 ">business</i>
               <i style="font-size: 18px; vertical-align: bottom;" *ngSwitchCase="'Entertainment'" class="material-icons sidebar-icons md-36 ">movie</i>

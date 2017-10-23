@@ -58,4 +58,5 @@ export class DataService {
     return this.http.get('http://api.geonames.org/findNearbyPlaceNameJSON?lat=' + lat + '&lng=' + long +
       '&username=balakumarrulez')
   }
+  
 }

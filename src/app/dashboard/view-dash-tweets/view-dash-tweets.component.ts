@@ -19,7 +19,6 @@ export class ViewDashTweetsComponent implements OnInit {
   ngOnInit() {
     this.data.getTweets(this.hashtag['hashtag'], 4).subscribe(
       (response) => {
-        console.log(response.json());
         this.tweets = response.json();
         for(let tweet in this.tweets) {
           this.data.getNumTweetsByUser(this.tweets[tweet].tweet.tweetJSON.user.id_str, this.hashtag['hashtag'])
@@ -31,15 +30,15 @@ export class ViewDashTweetsComponent implements OnInit {
   }
 
   timeDifference(previousString) {
-    var current = Date.now();
+    let current = Date.now();
     let previous = Date.parse(previousString)
-    var msPerMinute = 60 * 1000;
-    var msPerHour = msPerMinute * 60;
-    var msPerDay = msPerHour * 24;
-    var msPerMonth = msPerDay * 30;
-    var msPerYear = msPerDay * 365;
+    let msPerMinute = 60 * 1000;
+    let msPerHour = msPerMinute * 60;
+    let msPerDay = msPerHour * 24;
+    let msPerMonth = msPerDay * 30;
+    let msPerYear = msPerDay * 365;
 
-    var elapsed = current - previous;
+    let elapsed = current - previous;
 
     if (elapsed < msPerMinute) {
       return Math.round(elapsed/1000) + ' seconds ago';
