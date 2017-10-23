@@ -12,7 +12,7 @@ export class DashboardComponent implements OnInit {
   handles : any[] = [];
   nohashtags: boolean = false;
   loaded: boolean = false;
-
+  handleLoaded: boolean = false;
   constructor(private router: Router, private thisRoute: ActivatedRoute, private data: DataService) {
   }
 
@@ -25,7 +25,13 @@ export class DashboardComponent implements OnInit {
     this.thisRoute.queryParams.subscribe(
       (params: Params) => {
         this.loaded = false;
+        this.handleLoaded = false;
         if (!isNaN(+params['cat'])) {
+          this.data.getHandles(+params['cat']).subscribe((response) => {
+            this.handles = response.json();
+            this.handleLoaded = true;
+          });
+
           this.data.getHashtags((+params['cat'])).subscribe(
             (response) => {
               this.hashtags = response.json();
@@ -33,8 +39,20 @@ export class DashboardComponent implements OnInit {
             }
           );
         } else {
+
           //No category requested or invalid category
           //Showing all the categories.
+          let count = 0;
+
+          this.handles = [];
+          for (let i = 1; i <= 7; i++) {
+            this.data.getHandles(i).subscribe((response) => {
+              this.handles.push(response.json()[0]);
+              count++;
+              if (count == 7)
+                this.handleLoaded = true;
+            });
+          }
           this.loaded = false;
           this.data.getCategories().subscribe(
             (response) => {
@@ -63,7 +81,7 @@ export class DashboardComponent implements OnInit {
               }
             }
           );
-          
+
         }
 
         if (this.hashtags == null || this.hashtags.length == 0) {
