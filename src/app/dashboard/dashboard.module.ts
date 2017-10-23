@@ -16,7 +16,7 @@ import {ModalModule} from "ng2-bootstrap";
 import { ViewDashTweetsComponent } from './view-dash-tweets/view-dash-tweets.component';
 import { ChartsComponent } from './charts/charts.component';
 import { HandlesComponent } from './handles/handles.component';
-
+import { GeoChartComponent } from './charts/geo-chart.component';
 
 
 @NgModule({
@@ -30,7 +30,7 @@ import { HandlesComponent } from './handles/handles.component';
     FormsModule,
     ModalModule
   ],
-  declarations: [DashboardComponent, LoadingSpinnerComponent, ViewTweetsComponent, TweetRetweetChartComponent, ViewDashTweetsComponent, ChartsComponent, HandlesComponent]
+  declarations: [GeoChartComponent,DashboardComponent, LoadingSpinnerComponent, ViewTweetsComponent, TweetRetweetChartComponent, ViewDashTweetsComponent, ChartsComponent, HandlesComponent]
 })
 export class DashboardModule {
 }

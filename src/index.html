@@ -20,7 +20,13 @@
   <link href="assets/css/glyphicons.css" rel="stylesheet">
   <link href="assets/css/glyphicons-filetypes.css" rel="stylesheet">
   <link href="assets/css/glyphicons-social.css" rel="stylesheet">
-
+  <script src="https://www.gstatic.com/charts/loader.js"></script>
+<script>
+    // !important: You want to give this variable(var googleLoaded = false;). This is used to run multiple chart in your jade.
+    var googleLoaded = false;
+    // !important: Define which chart packages to preload.Because this package uses ChartWrappers you can use any chart type that Google supports, but if it // isn't loaded it will load it on demand.
+    var googleChartsPackagesToLoad = ['geochart'];
+</script>
 </head>
 
 <!-- BODY options, add following classes to body to change options
