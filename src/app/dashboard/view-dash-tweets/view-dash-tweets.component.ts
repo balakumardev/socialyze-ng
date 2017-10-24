@@ -17,7 +17,7 @@ export class ViewDashTweetsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.data.getTweets(this.hashtag['hashtag'], 3).subscribe(
+    this.data.getTweets(this.hashtag['hashtag'], 4).subscribe(
       (response) => {
         this.tweets = response.json();
         for(let tweet in this.tweets) {
