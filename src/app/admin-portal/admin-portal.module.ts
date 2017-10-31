@@ -12,6 +12,9 @@ import { AdminHashtagsComponent } from '../admin-hashtags/admin-hashtags.compone
 import { SwitchComponent } from './switch/switch.component';
 import { MoreHashtagDetailsComponent } from './more-hashtag-details/more-hashtag-details.component';
 import {TabsModule} from "ng2-bootstrap";
+import { AddHandleComponent } from './add-handle/add-handle.component';
+import { HandlesContainerComponent } from './handles-container/handles-container.component';
+import { HandleCardComponent } from './handles-container/handle-card/handle-card.component';
 
 @NgModule({
   imports: [
@@ -25,6 +28,6 @@ import {TabsModule} from "ng2-bootstrap";
     TabsModule
 
   ],
-  declarations: [ HashtagDetailsComponent,AddHashtagComponent,AdminHashtagsComponent,SwitchComponent, MoreHashtagDetailsComponent]
+  declarations: [ HashtagDetailsComponent,AddHashtagComponent,AdminHashtagsComponent,SwitchComponent, MoreHashtagDetailsComponent, AddHandleComponent, HandlesContainerComponent, HandleCardComponent]
 })
 export class AdminPortalModule { }

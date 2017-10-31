@@ -1,12 +1,18 @@
-<div class="container-fluid" *ngIf="loaded" style="padding:1%">
+<div class="container-fluid" style="padding:1%">
 
   <div class="col-sm-12">
     <tabset>
 
-      <!-- Nav tabs -->
-      <tab *ngFor="let category of categories" heading="{{category.name}}">
-
-        <app-hashtag-details [id]="category.id"></app-hashtag-details>
+      <tab heading="Hashtags">
+        <button class="btn btn-primary float-right" [routerLink]="['/admin/add-hashtag']" [queryParams]="{cat : category}">Add Hashtag</button>
+        <div class="clearfix"></div>
+        <br />
+        <app-hashtag-details [id]="category"></app-hashtag-details>
+      </tab>
+      <tab heading="Handles">
+        <button class="btn btn-primary float-right" [routerLink]="['/admin/add-handle']" [queryParams]="{cat : category}">Add Handle</button>
+        <div class="clearfix"></div>
+        <app-handles-container [id]="category"></app-handles-container>
       </tab>
 
     </tabset>

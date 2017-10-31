@@ -12,8 +12,7 @@ export class MoreHashtagDetailsComponent implements OnInit {
   st: string;
   hashtag: object;
 
-  constructor(private data: DataService) {
-  }
+  constructor(private data: DataService) { }
 
   ngOnInit() {
     this.hashtag = this.ihashtag;

@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {DataService} from "../data.service";
 import {NgForm} from "@angular/forms";
+import {ActivatedRoute, Params} from "@angular/router";
 
 @Component({
   selector: 'app-add-hashtag',
@@ -10,11 +11,11 @@ import {NgForm} from "@angular/forms";
 export class AddHashtagComponent implements OnInit {
   hashtags: any;
   categories: any;
-  category: any;
+  category: number;
   name: any;
   loaded: boolean = false;
   success: boolean = false;
-  constructor(private data: DataService) {
+  constructor(private data: DataService, private thisroute:ActivatedRoute) {
   }
 
   ngOnInit() {
@@ -24,10 +25,15 @@ export class AddHashtagComponent implements OnInit {
         this.loaded = true;
       }
     );
+    this.thisroute.queryParams.subscribe(
+      (response: Params) => {
+        this.category = +response['cat'];
+      }
+    )
   }
 
   logForm(form: NgForm) {
-    this.data.putHashtag(form.value.category, form.value.name).subscribe(
+    this.data.putHashtag(this.category, form.value.name).subscribe(
       (response) => {
         this.success = true;
       }

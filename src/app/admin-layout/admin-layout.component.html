@@ -127,17 +127,11 @@
   <div class="sidebar">
     <nav class="sidebar-nav">
       <ul class="nav" *ngIf="loaded">
-        <li class="nav-title text-center">
-          <span>Hashtag Manager</span>
-        </li>
 
-        <li class="nav-item">
+
+        <li class="nav-item" *ngFor="let cat of categories">
           <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true}"
-             [routerLink]="['view-hashtags']"><i class="fa fa-eye"></i> View Hashtags </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true}"
-             [routerLink]="['add-hashtag']"><i class="fa fa-plus-circle"></i> Add Hashtag </a>
+             [routerLink]="['view-hashtags']" [queryParams]=" { category: cat['id']} "><i class="fa fa-eye"></i> {{cat['name']}} </a>
         </li>
       </ul>
     </nav>

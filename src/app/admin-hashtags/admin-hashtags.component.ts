@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Params} from "@angular/router";
 import {DataService} from "../data.service";
 
 @Component({
@@ -8,18 +8,22 @@ import {DataService} from "../data.service";
   styleUrls: ['./admin-hashtags.component.scss']
 })
 export class AdminHashtagsComponent implements OnInit {
-	categories : any;
-	loaded: boolean = false;
-  constructor(private data: DataService, private thisroute: ActivatedRoute) { }
+  category: number;
+  loaded: boolean = false;
+  constructor(private data: DataService, private thisroute: ActivatedRoute) {
+  }
 
   ngOnInit() {
-	  this.data.getCategories().subscribe(
-            (response) => {
-              this.categories = response.json();
-			  this.loaded=true;
-            }
-          );
-		  
+    this.thisroute.queryParams.subscribe(
+      (params: Params) => {
+        if (!+params['category'])
+          this.category = 1;
+        else {
+          this.category = +params['category'];
+          console.log("Category changed to " + this.category);
+        }
+      }
+    )
   }
 
 }

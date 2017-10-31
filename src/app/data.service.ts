@@ -62,4 +62,11 @@ export class DataService {
   getHandles(id: number){
     return this.http.get('http://app.socialyze.in:8088/handle/'+ id);
   }
+
+  addHandles(cat: number, handle: string) {
+    return this.http.post('http://app.socialyze.in:8088/handle/' + handle + '?category=' + cat, null);
+  }
+  removeHandle(handle:string) {
+    return this.http.delete('http://app.socialyze.in:8088/handle/' + handle);
+  }
 }

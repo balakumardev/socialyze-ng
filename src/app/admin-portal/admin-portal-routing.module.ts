@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import {AdminHashtagsComponent} from '../admin-hashtags/admin-hashtags.component';
 import {AddHashtagComponent} from '../add-hashtag/add-hashtag.component';
+import {AddHandleComponent} from "./add-handle/add-handle.component";
 const routes: Routes = [
   {
     path: '',
@@ -25,6 +26,12 @@ const routes: Routes = [
         component: AddHashtagComponent,
         data: {
           title: 'Add Hashtag'
+        }
+      }, {
+        path: 'add-handle',
+        component: AddHandleComponent,
+        data: {
+          title: 'Add Handle'
         }
       }
     ]
