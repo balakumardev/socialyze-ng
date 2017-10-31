@@ -1,0 +1,25 @@
+<div class="card" style="box-shadow: 0 10px 20px rgba(0,0,0,0.23), 10px 15px 15px rgba(0,0,0,0.23);"
+     *ngIf="status">
+  <div class="card-block">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="row" >
+          <div class="col-sm-8" style="font-family:Arial;text-align:left;font-weight:bold;font-size:20px;color:grey">
+            <span>@{{handle}}</span>
+          </div>
+          <div class="col-sm-4" align="right">
+            <!--<app-switch [name]="handle"></app-switch>-->
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-9" style="font-family:Arial;text-align:left;font-size:15px;font-weight:bold;;margin-top:2%">
+        <!--Created at : {{handle['created_at']|date:'dd-MM-yyyy HH:mm:ss'}}-->
+      </div>
+
+      <div class="col-sm-3" style="font-family:Arial;font-weight:bold;text-align:right">
+        <i class="fa fa-trash-o" role="button" (click)="onclick(handle, $event)"
+           style="font-size:32px;color:#808080"></i>
+      </div>
+    </div>
+  </div>
+</div>

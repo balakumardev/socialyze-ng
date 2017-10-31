@@ -1,0 +1,7 @@
+<div *ngIf="loaded">
+  <div class="row">
+    <div class="col-sm-4" *ngFor="let handle of handles">
+      <app-handle-card [ihandle]="handle"></app-handle-card>
+    </div>
+  </div>
+</div>
