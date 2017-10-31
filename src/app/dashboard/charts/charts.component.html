@@ -1,34 +1,88 @@
 <div class="animated fadeIn">
   <div class="card-columns cols-2">
-      <div class="card">
-        <div class="card-header">
-          Doughnut Chart
-        </div>
-        <div class="card-block">
-          <div class="chart-wrapper" *ngIf="loaded">
-            <canvas baseChart class="chart"
-                    [data]="doughnutChartData"
-                    [labels]="doughnutChartLabels"
-                    [chartType]="doughnutChartType"
-                    (chartHover)="chartHovered($event)"
-                    (chartClick)="chartClicked($event)"></canvas>
-          </div>
+    <div class="card">
+      <div class="card-header">
+        Doughnut Chart
+      </div>
+      <div class="card-block">
+        <div class="chart-wrapper" *ngIf="loaded">
+          <canvas baseChart class="chart"
+                  [data]="doughnutChartData"
+                  [labels]="doughnutChartLabels"
+                  [chartType]="doughnutChartType"
+                  (chartHover)="chartHovered($event)"
+                  (chartClick)="chartClicked($event)"></canvas>
         </div>
       </div>
-      <div class="card">
-        <div class="card-header">
-          Pie Chart
-        </div>
-        <div class="card-block">
-          <div class="chart-wrapper" *ngIf="loaded">
-            <canvas baseChart class="chart"
-                    [data]="pieChartData"
-                    [labels]="pieChartLabels"
-                    [chartType]="pieChartType"
-                    (chartHover)="chartHovered($event)"
-                    (chartClick)="chartClicked($event)"></canvas>
-          </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        Pie Chart
+      </div>
+      <div class="card-block">
+        <div class="chart-wrapper" *ngIf="loaded">
+          <canvas baseChart class="chart"
+                  [data]="pieChartData"
+                  [labels]="pieChartLabels"
+                  [chartType]="pieChartType"
+                  (chartHover)="chartHovered($event)"
+                  (chartClick)="chartClicked($event)"></canvas>
         </div>
       </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        Location
+      </div>
+      <div class="card-block">
+        <div class="chart-wrapper" *ngIf="loadedLocations">
+          <agm-map
+            style="height: 300px;"
+            [latitude]="this.lat"
+            [longitude]="this.lng"
+            [zoom]="this.zoom"
+            [disableDefaultUI]="false"
+            [zoomControl]="false"
+            (mapClick)="mapClicked($event)"
+            [streetViewControl]="false"
+            [styles]="[ {
+                featureType: 'poi',
+                stylers: [{visibility: 'off'}]
+              },
+              {
+                featureType: 'transit',
+                elementType: 'labels.icon',
+                stylers: [{visibility: 'off'}]
+              }
+            ]"
+          >
+
+            <agm-marker-cluster
+              imagePath="https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m">
+              <agm-marker
+                *ngFor="let m of locations; let i = index"
+                (markerClick)="clickedMarker('tweeter', i)"
+                [latitude]="m.coordinates[1]"
+                [longitude]="m.coordinates[0]"
+                [markerDraggable]="false">
+
+                <agm-info-window>
+                  <strong>InfoWindow content</strong>
+                </agm-info-window>
+
+              </agm-marker>
+            </agm-marker-cluster>
+            <!--<agm-circle [latitude]="lat + 0.3" [longitude]="lng"
+                                    [radius]="5000"
+                                    [fillColor]="'red'"
+                                    [circleDraggable]="true"
+                                    [editable]="true">
+            </agm-circle>-->
+
+          </agm-map>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

@@ -69,4 +69,7 @@ export class DataService {
   removeHandle(handle:string) {
     return this.http.delete('http://app.socialyze.in:8088/handle/' + handle);
   }
+  getLocations(hashtag: string) {
+    return this.http.get('http://app.socialyze.in:8088/hashtag/geolocation/' + hashtag);
+  }
 }
